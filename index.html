@@ -253,7 +253,7 @@ function renderScheduled(){
 }
 
 function renderToday(){
-  var ev=allEvents().filter(function(x){ var d=daysUntil(x.date); return d!==null && d<=15; });
+  var ev=allEvents().filter(function(x){ var d=daysUntil(x.date); return d!==null && d>=0 && d<=15; });
   var html='<div class="section-title">✅ Опашка за днес / тази седмица</div>';
   if(!ev.length){ html+='<div class="empty">Няма спешни за днес. 🎉</div>'; $('main').innerHTML=html; return; }
   ev.forEach(function(x){
