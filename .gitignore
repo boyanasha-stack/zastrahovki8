@@ -1,1 +1,3 @@
-backup_*
+data.json
+__pycache__
+*.pyc

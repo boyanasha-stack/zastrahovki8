@@ -86,7 +86,7 @@ def add_months(iso, months):
     return f'{y2:04d}-{mo2:02d}-{min(d,last):02d}'
 
 def gen_installments(polica_id, enddate, vnoska):
-    """Връща ТЕКУЩАТА вноска за настоящия месец (по полето X/N).
+    """Връща ВСИЧКИ вноски (1..N) за полицата, за да показва и предстоящите.
     Логика: крайна дата → начало = край − 1 година.
     Вноска K от N: падеж = начало + (K−1)×3 месеца.
     '1/1' → еднократна (без вноски)."""
@@ -95,18 +95,18 @@ def gen_installments(polica_id, enddate, vnoska):
     try:
         numpart, denpart = str(vnoska).split('/')
         den = int(denpart)
-        k = int(numpart)   # поредната вноска за ТОЗИ ред (месец)
     except Exception:
         return []
     if den <= 1:
         return []  # 1/1 = еднократно
     if not enddate:
         return []
-    # начало на срока = крайна дата − 1 година
     start = minus_months(enddate, 12)
-    back = (k - 1) * 3
-    due = add_months(start, back)
-    return [{'no': k, 'of': den, 'dueDate': due}]
+    out = []
+    for k in range(1, den + 1):
+        due = add_months(start, (k - 1) * 3)
+        out.append({'no': k, 'of': den, 'dueDate': due})
+    return out
 
 def dedup_policies(policies):
     """Премахва дублирани полици по (кола + крайна дата + тип),

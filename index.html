@@ -104,19 +104,60 @@ var currentTab='scheduled', searchTerm='';
 
 function loader(){ return getData(); }
 
-/* Зареждане на данните (от data.json, генериран от Excel) */
+/* Зареждане на данните — криптирани, иска парола */
 function loadData(){
-  fetch('data.json?v='+Date.now())
+  // ако вече има запазена парола в сесията — опитай директно
+  var saved=sessionStorage.getItem('zpass');
+  if(saved){ decryptAndLoad(saved); return; }
+  showPasswordScreen();
+}
+
+function showPasswordScreen(){
+  $('main').innerHTML='<div class="empty" style="padding-top:40px;">'
+    +'<div style="font-size:40px;">🔐</div>'
+    +'<div style="margin:14px 0 18px;">Въведи парола за достъп</div>'
+    +'</div>'
+    +'<div class="field"><input id="pw" type="password" placeholder="Парола" autocomplete="off"></div>'
+    +'<button class="btn btn-primary" onclick="tryPassword()">Отвори</button>'
+    +'<div id="pwErr" style="color:var(--danger);text-align:center;margin-top:10px;font-size:14px;"></div>';
+  var inp=$('pw'); if(inp){ inp.focus(); inp.addEventListener('keydown',function(e){ if(e.key==='Enter') tryPassword(); }); }
+}
+
+function tryPassword(){
+  var p=$('pw').value;
+  if(!p) return;
+  sessionStorage.setItem('zpass', p);
+  decryptAndLoad(p);
+}
+
+function decryptAndLoad(pw){
+  $('main').innerHTML='<div class="empty" style="padding-top:40px;">⏳ Зареждам...</div>';
+  fetch('data.enc.json?v='+Date.now())
     .then(function(r){ return r.json(); })
-    .then(function(d){
-      DATA = d;
+    .then(function(enc){ return decryptData(enc, pw); })
+    .then(function(json){
+      DATA = JSON.parse(json);
       if(!DATA.events) DATA.events=[];
       render();
     })
     .catch(function(e){
-      document.getElementById('main').innerHTML =
-        '<div class="empty">⚠️ Не мога да заредя data.json<br><span style="font-size:12px">'+e+'</span></div>';
+      sessionStorage.removeItem('zpass');
+      showPasswordScreen();
+      var el=$('pwErr'); if(el) el.textContent='Грешна парола или проблем при зареждане';
     });
+}
+
+/* AES-256-GCM декриптиране (PBKDF2) — съвпада с encrypt_data.py */
+function b64ToBuf(b64){ var bin=atob(b64); var arr=new Uint8Array(bin.length); for(var i=0;i<bin.length;i++) arr[i]=bin.charCodeAt(i); return arr; }
+async function decryptData(enc, password){
+  var salt=b64ToBuf(enc.salt), iv=b64ToBuf(enc.iv), ct=b64ToBuf(enc.ct);
+  var enc_pw=new TextEncoder().encode(password);
+  var keyMat=await crypto.subtle.importKey('raw', enc_pw, 'PBKDF2', false, ['deriveKey']);
+  var key=await crypto.subtle.deriveKey(
+    {name:'PBKDF2', salt:salt, iterations:100000, hash:'SHA-256'},
+    keyMat, {name:'AES-GCM', length:256}, false, ['decrypt']);
+  var plain=await crypto.subtle.decrypt({name:'AES-GCM', iv:iv}, key, ct);
+  return new TextDecoder().decode(plain);
 }
 
 /* ============ ПОМОЩНИ ============ */
