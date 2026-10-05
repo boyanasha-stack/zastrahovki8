@@ -104,10 +104,9 @@ var currentTab='scheduled', searchTerm='';
 
 function loader(){ return getData(); }
 
-/* Зареждане на данните — криптирани, иска парола */
+/* Зареждане на данните — криптирани, паролата се помни („помни ме") */
 function loadData(){
-  // ако вече има запазена парола в сесията — опитай директно
-  var saved=sessionStorage.getItem('zpass');
+  var saved=localStorage.getItem('zpass');
   if(saved){ decryptAndLoad(saved); return; }
   showPasswordScreen();
 }
@@ -118,6 +117,8 @@ function showPasswordScreen(){
     +'<div style="margin:14px 0 18px;">Въведи парола за достъп</div>'
     +'</div>'
     +'<div class="field"><input id="pw" type="password" placeholder="Парола" autocomplete="off"></div>'
+    +'<label style="display:flex;align-items:center;gap:8px;color:var(--muted);font-size:14px;margin:6px 2px 4px;">'
+    +'<input type="checkbox" id="pwRemember" checked style="width:auto;"> Запомни ме на това устройство</label>'
     +'<button class="btn btn-primary" onclick="tryPassword()">Отвори</button>'
     +'<div id="pwErr" style="color:var(--danger);text-align:center;margin-top:10px;font-size:14px;"></div>';
   var inp=$('pw'); if(inp){ inp.focus(); inp.addEventListener('keydown',function(e){ if(e.key==='Enter') tryPassword(); }); }
@@ -126,7 +127,9 @@ function showPasswordScreen(){
 function tryPassword(){
   var p=$('pw').value;
   if(!p) return;
-  sessionStorage.setItem('zpass', p);
+  var remember=!$('pwRemember')||$('pwRemember').checked;
+  if(remember) localStorage.setItem('zpass', p);
+  else sessionStorage.setItem('zpass', p);
   decryptAndLoad(p);
 }
 
@@ -141,6 +144,7 @@ function decryptAndLoad(pw){
       render();
     })
     .catch(function(e){
+      localStorage.removeItem('zpass');
       sessionStorage.removeItem('zpass');
       showPasswordScreen();
       var el=$('pwErr'); if(el) el.textContent='Грешна парола или проблем при зареждане';
