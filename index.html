@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Застр 8">
+<title>Застраховки 8</title>
+<style>
+  :root{
+    --bg:#0f1117; --card:#181b24; --card2:#1e2230; --line:#272c3b;
+    --text:#e8eaf1; --muted:#9aa3b5; --accent:#4f8cff; --accent2:#21c08b;
+    --warn:#f5a623; --danger:#ff5c5c; --gold:#e8b64c;
+  }
+  *{box-sizing:border-box; -webkit-tap-highlight-color:transparent;}
+  html,body{margin:0; padding:0; background:var(--bg); color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    font-size:16px; line-height:1.4;}
+  body{padding-bottom:20px;}
+  .appbar{position:sticky; top:0; z-index:20; background:rgba(15,17,23,.95);
+    backdrop-filter:blur(10px); border-bottom:1px solid var(--line); padding:10px 14px 12px;}
+  .appbar h1{margin:0 0 8px; font-size:19px; font-weight:700;}
+  .searchbox{position:relative;}
+  .searchbox input{width:100%; padding:11px 14px 11px 38px; border-radius:12px;
+    border:1px solid var(--line); background:var(--card2); color:var(--text); font-size:16px;}
+  .searchbox input:focus{outline:none; border-color:var(--accent);}
+  .searchbox .ic{position:absolute; left:12px; top:50%; transform:translateY(-50%); color:var(--muted);}
+  nav.tabs{display:flex; gap:6px; margin-top:10px; overflow-x:auto;}
+  nav.tabs button{flex:1; min-width:78px; padding:8px 6px; border-radius:10px; border:1px solid var(--line);
+    background:var(--card2); color:var(--muted); font-size:13px; font-weight:600; white-space:nowrap;}
+  nav.tabs button.active{background:var(--accent); color:#fff; border-color:var(--accent);}
+  main{padding:12px 14px;}
+  .kpi{display:flex; gap:8px;}
+  .kpi > div{flex:1; background:var(--card); border:1px solid var(--line); border-radius:12px; padding:10px; text-align:center;}
+  .kpi b{display:block; font-size:20px;}
+  .kpi span{font-size:11px; color:var(--muted);}
+  .section-title{font-size:13px; font-weight:700; color:var(--muted); text-transform:uppercase;
+    letter-spacing:.5px; margin:16px 2px 8px;}
+  .list-item{background:var(--card); border:1px solid var(--line); border-radius:12px;
+    padding:11px 13px; margin-bottom:8px;}
+  .list-item .name{font-weight:600; font-size:15px;}
+  .list-item .meta{color:var(--muted); font-size:13px; margin-top:3px;}
+  .empty{color:var(--muted); text-align:center; padding:26px 10px; font-size:14px;}
+  .badge{display:inline-block; padding:1px 7px; border-radius:7px; font-size:11px; font-weight:700; margin-left:5px;}
+  .badge.go{background:rgba(79,140,255,.18); color:var(--accent);}
+  .badge.kasko{background:rgba(33,192,139,.18); color:var(--accent2);}
+  .badge.warn{background:rgba(245,166,35,.18); color:var(--warn);}
+  .badge.danger{background:rgba(255,92,92,.18); color:var(--danger);}
+  .badge.ok{background:rgba(33,192,139,.18); color:var(--accent2);}
+  .modal-bg{position:fixed; inset:0; background:rgba(0,0,0,.6); z-index:50; display:none;}
+  .modal-bg.show{display:block;}
+  .modal{position:fixed; left:0; right:0; bottom:0; max-height:88vh; overflow-y:auto;
+    background:var(--card); border-radius:18px 18px 0 0; padding:18px 16px 26px; z-index:60;}
+  .close-x{position:absolute; right:14px; top:12px; background:none; border:none;
+    color:var(--muted); font-size:26px; line-height:1;}
+  .field{margin:10px 0;}
+  .field label{display:block; font-size:13px; color:var(--muted); margin-bottom:4px;}
+  .field input,.field textarea,.field select{width:100%; padding:10px 12px; border-radius:10px;
+    border:1px solid var(--line); background:var(--card2); color:var(--text); font-size:15px;}
+  textarea{min-height:70px; resize:vertical;}
+  .btn{width:100%; padding:12px; border-radius:12px; border:none; font-size:15px; font-weight:700; margin-top:8px;}
+  .btn-primary{background:var(--accent); color:#fff;}
+  .btn-secondary{background:var(--card2); color:var(--text); border:1px solid var(--line);}
+  .btn-danger{background:rgba(255,92,92,.15); color:var(--danger); border:1px solid var(--danger);}
+  .btn-ghost{background:transparent; color:var(--muted);}
+  .detail-block{margin-top:14px; border-top:1px solid var(--line); padding-top:10px;}
+  .detail-block h3{font-size:14px; margin:0 0 8px;}
+  .toast{position:fixed; left:50%; bottom:30px; transform:translateX(-50%) translateY(20px);
+    background:var(--card2); border:1px solid var(--line); color:var(--text); padding:10px 18px;
+    border-radius:10px; font-size:14px; opacity:0; transition:.25s; z-index:99; pointer-events:none;}
+  .toast.show{opacity:1; transform:translateX(-50%) translateY(0);}
+  .offer-box{white-space:pre-wrap; background:var(--card2); border:1px solid var(--line);
+    border-radius:10px; padding:12px; font-size:14px; margin-top:10px;}
+  .status-pill{display:inline-block; padding:3px 10px; border-radius:20px; font-size:12px; font-weight:700;}
+</style>
+</head>
+<body>
+
+<div class="appbar">
+  <h1>🛡️ Застраховки 8</h1>
+  <div class="searchbox">
+    <span class="ic">🔍</span>
+    <input id="searchInput" type="text" placeholder="Рег. номер, марка, модел или клиент..." autocomplete="off">
+  </div>
+  <nav class="tabs">
+    <button data-tab="scheduled" class="active">📅 Предстоящи</button>
+    <button data-tab="today">✅ За днес</button>
+    <button data-tab="finance">💰 Финанси</button>
+    <button data-tab="offer">🧾 Оферта</button>
+  </nav>
+</div>
+
+<main id="main"></main>
+<div id="toast" class="toast"></div>
+<div id="modalBg" class="modal-bg" onclick="closeModal()"></div>
+<div id="modal" class="modal" style="display:none"></div>
+
+<script>
+/* ============ СЪСТОЯНИЕ ============ */
+var DATA = {clients:[],cars:[],policies:[],events:[]};
+var currentTab='scheduled', searchTerm='';
+
+function loader(){ return getData(); }
+
+/* Зареждане на данните (от data.json, генериран от Excel) */
+function loadData(){
+  fetch('data.json?v='+Date.now())
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      DATA = d;
+      if(!DATA.events) DATA.events=[];
+      render();
+    })
+    .catch(function(e){
+      document.getElementById('main').innerHTML =
+        '<div class="empty">⚠️ Не мога да заредя data.json<br><span style="font-size:12px">'+e+'</span></div>';
+    });
+}
+
+/* ============ ПОМОЩНИ ============ */
+function $(id){ return document.getElementById(id); }
+function esc(s){ return String(s==null?'':s).replace(/[&<>"']/g,function(m){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m];}); }
+function today(){ var d=new Date(); d.setHours(0,0,0,0); return d; }
+function pd(s){ if(!s) return null; var d=new Date(String(s).length<=10 ? s+'T00:00:00' : s); return isNaN(d)?null:d; }
+function daysUntil(s){ var d=pd(s); if(!d) return null; d.setHours(0,0,0,0); return Math.round((d-today())/86400000); }
+function fmtDate(s){ var d=pd(s); if(!d) return '—'; var dd=('0'+d.getDate()).slice(-2), mm=('0'+(d.getMonth()+1)).slice(-2); return dd+'.'+mm+'.'+d.getFullYear(); }
+function getClient(id){ return DATA.clients.filter(function(c){return String(c.id)===String(id);})[0]; }
+function getCar(id){ return DATA.cars.filter(function(c){return String(c.id)===String(id);})[0]; }
+function carsForClient(id){ return DATA.cars.filter(function(c){return String(c.clientId)===String(id);}); }
+function policiesForCar(id){ return DATA.policies.filter(function(p){return String(p.carId)===String(id);}); }
+function isGo(p){ return String(p.type||'').toUpperCase().indexOf('ГО')>=0 || String(p.polica||'').indexOf('BG/')===0; }
+function num(x){ var n=parseFloat(String(x==null?'':x).replace(',','.')); return isNaN(n)?0:n; }
+function money(x){ return num(x).toFixed(2)+' €'; }
+
+/* Статус на полица */
+function policyStatus(p){
+  var d=daysUntil(p.endDate);
+  if(d===null) return {k:'none', label:'—', cls:''};
+  if(d>30) return {k:'active', label:'Активна', cls:'ok'};
+  if(d>15) return {k:'renew30', label:'Предстоящо подновяване', cls:'warn'};
+  if(d>7)  return {k:'contact15', label:'За контакт сега', cls:'warn'};
+  if(d>0)  return {k:'time7', label:'⏰ Време е', cls:'danger'};
+  if(d===0) return {k:'today', label:'Изтича днес', cls:'danger'};
+  if(d<0)  return {k:'expired', label:'Изтекла', cls:'danger'};
+}
+/* Статус на вноска */
+function instStatus(i){
+  if(i.paid) return {k:'paid', label:'Платена', cls:'ok'};
+  var d=daysUntil(i.dueDate);
+  if(d===null) return {k:'none',label:'—',cls:''};
+  if(d>15) return {k:'future', label:'Предстояща', cls:''};
+  if(d>7)  return {k:'soon15', label:'Предстояща (15 дни)', cls:'warn'};
+  if(d>0)  return {k:'due7', label:'Очаква плащане', cls:'warn'};
+  return {k:'overdue', label:'Просрочена', cls:'danger'};
+}
+
+/* ============ СЪБИТИЯ (подновявания + вноски + доп.) ============ */
+function allEvents(){
+  var ev=[];
+  DATA.policies.forEach(function(p){
+    var car=getCar(p.carId), c=getClient(p.clientId);
+    ev.push({kind:'renewal', date:p.endDate, p:p, car:car, c:c,
+             label:'🔄 Подновяване', sub:(car?(car.make||'')+' '+(car.model||'')+' '+(car.plate||''):''),
+             amount:p.suma_client||p.suma, type:isGo(p)?'ГО':'КАСКО'});
+  });
+  DATA.events.forEach(function(e){
+    var car=getCar(e.carId), c=getClient(e.clientId);
+    var lbl;
+    if(e.type==='Вноска'){ lbl='💳 Предстояща вноска '+(e.no||'')+'/'+(e.of||''); }
+    else { lbl='📌 '+(e.type||'Събитие'); }
+    ev.push({kind:'event', date:e.date, e:e, car:car, c:c,
+             label:lbl, sub:(car?(car.make||'')+' '+(car.model||'')+' '+(car.plate||''):''), amount:e.amount});
+  });
+  ev=ev.filter(function(x){ return daysUntil(x.date)!==null; });
+  ev.sort(function(a,b){ return String(a.date).localeCompare(String(b.date)); });
+  return ev;
+}
+
+/* ============ РЕНДЕР ============ */
+function render(){
+  var fab=null;
+  var main=$('main');
+  if(searchTerm && searchTerm.trim().length>=2){ renderSearch(); return; }
+  if(currentTab==='scheduled') renderScheduled();
+  else if(currentTab==='today') renderToday();
+  else if(currentTab==='finance') renderFinance();
+  else if(currentTab==='offer') renderOffer();
+}
+
+function renderScheduled(){
+  var ev=allEvents().filter(function(x){ return daysUntil(x.date)>=0; });
+  var html='<div class="section-title">📅 Предстоящи събития ('+ev.length+')</div>';
+  if(!ev.length){ html+='<div class="empty">Няма предстоящи събития.</div>'; $('main').innerHTML=html; return; }
+  ev.forEach(function(x){
+    var d=daysUntil(x.date);
+    var urg = d<=7?'<span class="badge danger">Време е</span>':(d<=15?'<span class="badge warn">Контакт</span>':(d<=30?'<span class="badge warn">Подновяване</span>':''));
+    var typ = x.kind==='renewal'?('<span class="badge '+(x.type==='ГО'?'go':'kasko')+'">'+x.type+'</span>'):'';
+    var click = x.kind==='renewal' ? "openCar('"+x.p.carId+"')" : "openCar('"+(x.e.carId||'')+"')";
+    html+='<div class="list-item" onclick="'+click+'">'
+      +'<div class="name">'+x.label+typ+urg+'</div>'
+      +'<div class="meta">'+esc(x.c?x.c.name:'—')+' · '+esc(x.sub)+'</div>'
+      +'<div class="meta">📅 '+fmtDate(x.date)+' (след '+d+' дн.)'+(x.amount?' · 💰 '+money(x.amount):'')+'</div>'
+      +'</div>';
+  });
+  $('main').innerHTML=html;
+}
+
+function renderToday(){
+  var ev=allEvents().filter(function(x){ var d=daysUntil(x.date); return d!==null && d<=15; });
+  var html='<div class="section-title">✅ Опашка за днес / тази седмица</div>';
+  if(!ev.length){ html+='<div class="empty">Няма спешни за днес. 🎉</div>'; $('main').innerHTML=html; return; }
+  ev.forEach(function(x){
+    var d=daysUntil(x.date);
+    var col = d<=7?'var(--danger)':(d<=15?'var(--warn)':'var(--muted)');
+    html+='<div class="list-item" onclick="'+(x.kind==='renewal'?"openCar('"+x.p.carId+"')":"openCar('"+(x.e.carId||'')+"')")+'">'
+      +'<div class="name">'+x.label+' <span style="color:'+col+';font-weight:700;">'+(d<0?'ПРОСРОЧЕНО':(d===0?'ДНЕС':'след '+d+' дн.'))+'</span></div>'
+      +'<div class="meta">'+esc(x.c?x.c.name:'—')+' · '+esc(x.sub)+'</div>'
+      +'<div class="meta">📅 '+fmtDate(x.date)+'</div></div>';
+  });
+  $('main').innerHTML=html;
+}
+
+function renderFinance(){
+  var totalProfit=0, byMonth={};
+  DATA.policies.forEach(function(p){
+    var pr=num(p.profit);
+    totalProfit+=pr;
+    var m=String(p.endDate||'').slice(0,7);
+    if(m){ byMonth[m]=(byMonth[m]||0)+pr; }
+  });
+  var html='<div class="section-title">💰 Финансов преглед</div>';
+  html+='<div class="kpi" style="margin-bottom:12px"><div><b>'+money(totalProfit)+'</b><span>Обща печалба</span></div>'
+    +'<div><b>'+DATA.policies.length+'</b><span>полици</span></div></div>';
+  html+='<div class="section-title">По месеци</div>';
+  Object.keys(byMonth).sort().forEach(function(m){
+    html+='<div class="list-item"><div class="name">'+m+'</div><div class="meta">💰 '+money(byMonth[m])+'</div></div>';
+  });
+  $('main').innerHTML=html;
+}
+
+function renderOffer(){
+  // избор на кола (за да покажем старата полица)
+  var opts='<option value="">— избери кола —</option>';
+  DATA.cars.slice().sort(function(a,b){ return String(a.plate).localeCompare(String(b.plate)); }).forEach(function(c){
+    opts+='<option value="'+c.id+'">'+esc((c.make||'')+' '+(c.model||'')+' · '+(c.plate||''))+'</option>';
+  });
+  var html='<div class="section-title">🧾 Оферта + сравнение със старата полица</div>'
+    +'<div class="field"><label>Кола (за сравнение със старата полица)</label><select id="of-car" onchange="onOfferCarChange()">'+opts+'</select></div>'
+    +'<div id="oldPolicy"></div>'
+    +'<div class="section-title">Нова оферта</div>'
+    +'<div class="field"><label>Марка и модел</label><input id="of-model"></div>'
+    +'<div class="field"><label>Застрахователна сума</label><input id="of-zs"></div>'
+    +'<div class="field"><label>КАСКО еднократно</label><input id="of-kasko1"></div>'
+    +'<div class="field"><label>КАСКО на вноски</label><input id="of-kaskoN"></div>'
+    +'<div class="field"><label>Гражданска отговорност</label><input id="of-go"></div>'
+    +'<button class="btn btn-primary" onclick="makeOffer()">Създай оферта'+(DATA.cars.length?'':'')+'</button>'
+    +'<div id="offerOut"></div>';
+  $('main').innerHTML=html;
+}
+
+function onOfferCarChange(){
+  var id=$('of-car').value;
+  var box=$('oldPolicy');
+  if(!id){ box.innerHTML=''; return; }
+  var car=getCar(id);
+  var pols=policiesForCar(id);
+  if(!pols.length){ box.innerHTML='<div class="empty">Няма стара полица за тази кола.</div>'; return; }
+  // вземи най-новата (най-късна крайна дата)
+  var p=pols.slice().sort(function(a,b){ return String(b.endDate).localeCompare(String(a.endDate)); })[0];
+  box.innerHTML='<div class="list-item" style="border-color:var(--accent)">'
+    +'<div class="name">📋 Стара полица · '+(isGo(p)?'ГО':'КАСКО')+(p.polica?' · '+esc(p.polica):'')+'</div>'
+    +'<div class="meta">Изтича: '+fmtDate(p.endDate)+'</div>'
+    +'<div class="meta">Сума: '+(p.suma_client?money(p.suma_client):'—')+(p.vnoska?' · вноски '+esc(p.vnoska):'')+'</div>'
+    +'</div>';
+  // попълни марка/модел
+  if(car && !$('of-model').value){ $('of-model').value=(car.make||'')+' '+(car.model||''); }
+}
+
+function makeOffer(){
+  var m=$('of-model').value.trim(), zs=$('of-zs').value.trim(),
+      k1=$('of-kasko1').value.trim(), kn=$('of-kaskoN').value.trim(), g=$('of-go').value.trim();
+  var txt=(m||'[Марка и модел]')+'\n'
+    +'- Застрахователна сума: '+(zs||'...')+'\n'
+    +'- Сума КАСКО еднократно: '+(k1||'...')+'\n'
+    +'- Сума КАСКО на вноски: '+(kn||'...')+'\n'
+    +'- Гражданска отговорност: '+(g||'...');
+  var html='<div class="offer-box" id="offerText">'+esc(txt)+'</div>'
+    +'<button class="btn btn-primary" onclick="copyOffer()">📋 Копирай</button>';
+  // сравнение със старата полица (ако има избрана кола)
+  var carid=$('of-car')?$('of-car').value:'';
+  if(carid){
+    var pols=policiesForCar(carid);
+    if(pols.length){
+      var oldP=pols.slice().sort(function(a,b){ return String(b.endDate).localeCompare(String(a.endDate)); })[0];
+      var oldSum=num(oldP.suma_client||oldP.suma);
+      var newSum=num(k1)||num(kn)||num(zs);
+      if(oldSum&&newSum){
+        var diff=newSum-oldSum;
+        var pct=Math.round(diff/oldSum*100);
+        var col=diff>0?'var(--danger)':'var(--accent2)';
+        var sign=diff>0?'+':'';
+        html+='<div class="section-title">📊 Сравнение</div>'
+          +'<div class="list-item"><div class="name">Стара: '+money(oldSum)+' · Нова: '+money(newSum)+'</div>'
+          +'<div class="meta" style="color:'+col+';font-weight:700;">Разлика: '+sign+money(diff)+' ('+sign+pct+'%)</div></div>';
+      }
+    }
+  }
+  $('offerOut').innerHTML=html;
+}
+
+function renderSearch(){
+  var q=searchTerm.trim().toLowerCase();
+  var cl=DATA.clients.filter(function(c){ return String(c.name||'').toLowerCase().indexOf(q)>=0 || String(c.phone||'').indexOf(q)>=0; });
+  var cars=DATA.cars.filter(function(c){ return [c.plate,c.make,c.model,c.vin].join(' ').toLowerCase().indexOf(q)>=0; });
+  var html='<div class="section-title">🔍 Резултати</div>';
+  if(cl.length){
+    html+='<div class="section-title" style="margin-top:6px">Клиенти</div>';
+    cl.slice(0,20).forEach(function(c){
+      html+='<div class="list-item" onclick="openClient(\''+c.id+'\')"><div class="name">👤 '+esc(c.name)+'</div>'
+        +'<div class="meta">🚗 '+carsForClient(c.id).length+' коли</div></div>';
+    });
+  }
+  if(cars.length){
+    html+='<div class="section-title" style="margin-top:6px">Коли</div>';
+    cars.slice(0,30).forEach(function(c){
+      var own=getClient(c.clientId);
+      html+='<div class="list-item" onclick="openCar(\''+c.id+'\')"><div class="name">🚗 '+esc((c.make||'')+' '+(c.model||''))+' <span style="color:var(--gold);font-weight:700;">'+esc(c.plate||'')+'</span></div>'
+        +'<div class="meta">👤 '+esc(own?own.name:'—')+'</div></div>';
+    });
+  }
+  if(!cl.length && !cars.length){ html+='<div class="empty">Няма резултати за „'+esc(searchTerm)+'".</div>'; }
+  $('main').innerHTML=html;
+}
+
+/* ============ МОДАЛИ ============ */
+function showModal(html){ $('modal').innerHTML=html; $('modal').style.display='block'; $('modalBg').classList.add('show'); }
+function closeModal(){ $('modal').style.display='none'; $('modalBg').classList.remove('show'); }
+function toast(m){ var t=$('toast'); t.textContent=m; t.classList.add('show'); setTimeout(function(){t.classList.remove('show');},1800); }
+
+function openClient(id){
+  var c=getClient(id); if(!c) return;
+  var myc=carsForClient(id);
+  var carsHtml=myc.length?myc.map(function(k){
+    return '<div class="list-item" onclick="closeModal();openCar(\''+k.id+'\')"><div class="name">🚗 '+esc((k.make||'')+' '+(k.model||''))+' <span style="color:var(--gold);font-weight:700;">'+esc(k.plate||'')+'</span></div></div>';
+  }).join(''):'<div class="empty">Няма коли.</div>';
+  showModal('<button class="close-x" onclick="closeModal()">&times;</button><h2>👤 '+esc(c.name)+'</h2>'
+    +(c.phone?'<div class="meta" style="color:var(--muted)">📞 '+esc(c.phone)+'</div>':'')
+    +'<div class="detail-block"><h3>Коли ('+myc.length+')</h3>'+carsHtml+'</div>');
+}
+
+function openCar(id){
+  var car=getCar(id); if(!car){ toast('Няма кола'); return; }
+  var own=car.clientId?getClient(car.clientId):null;
+  var pols=policiesForCar(id);
+  var polHtml=pols.length?pols.map(function(p){
+    var st=policyStatus(p);
+    return '<div class="list-item"><div class="name">'+(isGo(p)?'ГО':'КАСКО')+(p.polica?' · '+esc(p.polica):'')
+      +' <span class="badge '+st.cls+'">'+st.label+'</span></div>'
+      +'<div class="meta">Изтича: '+fmtDate(p.endDate)+(p.suma_client?' · 💰 '+money(p.suma_client):'')+'</div></div>';
+  }).join(''):'<div class="empty">Няма полици.</div>';
+  showModal('<button class="close-x" onclick="closeModal()">&times;</button>'
+    +'<h2>🚗 '+esc((car.make||'')+' '+(car.model||''))+' <span style="color:var(--gold);font-weight:700;">'+esc(car.plate||'')+'</span></h2>'
+    +'<div class="meta" style="color:var(--muted)">👤 '+esc(own?own.name:'—')+'</div>'
+    +(car.vin?'<div class="meta" style="color:var(--muted)">VIN: '+esc(car.vin)+'</div>':'')
+    +'<div class="field"><label>Адрес за пращане на полица</label><input id="car-addr" value="'+esc(car.address||'')+'" placeholder="адрес..."></div>'
+    +'<button class="btn btn-primary" onclick="saveCarField(\''+car.id+'\',\'address\',document.getElementById(\'car-addr\').value)">Запази адрес</button>'
+    +'<div class="detail-block"><h3>Полици ('+pols.length+')</h3>'+polHtml+'</div>'
+    +'<div class="detail-block"><h3>📝 Бележки (щети)</h3>'
+    +'<div class="field"><textarea id="car-notes" placeholder="заведени щети, протоколи...">'+esc(car.notes||'')+'</textarea></div>'
+    +'<button class="btn btn-secondary" onclick="saveCarField(\''+car.id+'\',\'notes\',document.getElementById(\'car-notes\').value)">Запази бележка</button></div>');
+}
+
+function copyOffer(){
+  var t=$('offerText').textContent;
+  if(navigator.clipboard){ navigator.clipboard.writeText(t).then(function(){toast('Копирано');}); }
+  else { toast('Копирай ръчно'); }
+}
+
+/* ============ ЗАПАЗВАНЕ (Google Sheets чрез API) ============ */
+function saveCarField(carId, field, val){
+  // засега пази локално; после ще свържем към Google Sheets
+  var car=getCar(carId); if(car){ car[field]=val; toast('Запазено (локално)'); }
+}
+
+/* ============ ИНИЦИАЛИЗАЦИЯ ============ */
+document.querySelectorAll('nav.tabs button').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    currentTab=btn.dataset.tab;
+    searchTerm=''; $('searchInput').value='';
+    document.querySelectorAll('nav.tabs button').forEach(function(b){b.classList.remove('active');});
+    btn.classList.add('active');
+    render();
+  });
+});
+$('searchInput').addEventListener('input', function(e){ searchTerm=e.target.value; render(); });
+loadData();
+</script>
+</body>
+</html>
