@@ -197,7 +197,7 @@ def main():
         vnoska = str(v[5]).strip() if v[5] else ''
         suma = v[3] if v[3] is not None else ''
         suma_client = v[7] if v[7] is not None else ''
-        profit = v[13] if len(v) > 13 and v[13] is not None else ''
+        profit = v[13] if len(v) > 13 and v[13] is not None else ''   # колона N = „Печалба" (секцията в Excel)
         commission = v[10] if len(v) > 10 and v[10] is not None else ''
 
         ptype = 'ГО' if polno.startswith('BG/') else ('КАСКО' if polno else '')

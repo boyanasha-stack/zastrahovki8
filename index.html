@@ -355,7 +355,7 @@ function renderFinance(){
     +'<div><b>'+cnt+'</b><span>полици</span></div></div>';
   html+='<div class="section-title">По месеци (печалба)</div>';
   if(!Object.keys(byMonth).length){ html+='<div class="empty">Няма данни.</div>'; $('main').innerHTML=html; return; }
-  var keys=Object.keys(byMonth).sort();   // хронологично
+  var keys=Object.keys(byMonth).sort().reverse();   // от последния към първия
   keys.forEach(function(m){
     var past=m<dm, cur=m===dm;
     var tag = cur?'<span class="badge ok">до момента</span>':(past?'<span class="badge">приключил</span>':'<span class="badge warn">бъдещ</span>');
