@@ -92,7 +92,6 @@
   </div>
   <nav class="tabs">
     <button data-tab="scheduled" class="active">📅 Предстоящи</button>
-    <button data-tab="vnoski">💳 Вноски</button>
     <button data-tab="today">✅ За днес</button>
     <button data-tab="finance">💰 Финанси</button>
     <button data-tab="offer">🧾 Оферта</button>
@@ -122,6 +121,7 @@ function loadST(){
 function stSave(){ ['v_pay','v_paid','r_renew','r_paid'].forEach(function(k){ localStorage.setItem('zs_'+k, JSON.stringify(ST[k])); }); }
 function has(k,id){ return ST[k].indexOf(String(id))>=0; }
 function toggle(k,id){ id=String(id); var arr=ST[k]; var i=arr.indexOf(id); if(i>=0) arr.splice(i,1); else arr.push(id); stSave(); }
+/* платените вноски вече НЕ се показват в Предстоящи, но остават записани */
 function vDueKey(e){ return 'k'+e.carId+'_'+e.no+'_'+e.date; }
 function vIssue(e){ return has('v_pay', vDueKey(e)); }
 function vPaid(e){ return has('v_paid', vDueKey(e)); }
@@ -257,7 +257,6 @@ function render(){
   var main=$('main');
   if(searchTerm && searchTerm.trim().length>=2){ renderSearch(); return; }
   if(currentTab==='scheduled') renderScheduled();
-  else if(currentTab==='vnoski') renderVnoski();
   else if(currentTab==='today') renderToday();
   else if(currentTab==='finance') renderFinance();
   else if(currentTab==='offer') renderOffer();
@@ -288,23 +287,6 @@ function actionBtns(kind,id,issued,done,carId){
   return h;
 }
 function stToggle(k,id,carId){ toggle(k,id); toast('Запазено'); render(); if(carId) openCar(carId); }
-
-/* Таб „Вноски" — платените вноски остават тук, но изчезват от Предстоящи */
-function renderVnoski(){
-  var ev=allEvents().filter(function(x){ return x.kind==='event' && x.e && x.e.type==='Вноска'; });
-  var html='<div class="section-title">💳 Всички вноски ('+ev.length+')</div>';
-  if(!ev.length){ html+='<div class="empty">Няма вноски за показване.</div>'; $('main').innerHTML=html; return; }
-  ev.forEach(function(x){
-    var e=x.e;
-    html+='<div class="list-item">'
-      +'<div class="name">💳 Вноска '+(e.no||'')+'/'+(e.of||'')+' '+vStatusPill(e)+'</div>'
-      +'<div class="meta">'+esc(x.c?x.c.name:'—')+' · '+esc(x.sub)+'</div>'
-      +'<div class="meta">📅 '+fmtDate(x.date)+(x.amount?' · 💰 '+money(x.amount):'')+'</div>'
-      +actionBtns('v', vDueKey(e), vIssue(e), vPaid(e))
-      +'</div>';
-  });
-  $('main').innerHTML=html;
-}
 
 function renderScheduled(){
   var ev=allEvents().filter(function(x){ return daysUntil(x.date)>=0; });
@@ -350,20 +332,37 @@ function renderToday(){
   $('main').innerHTML=html;
 }
 
+var MONTHS_BG=['януари','февруари','март','април','май','юни','юли','август','септември','октомври','ноември','декември'];
+function endMonth(p){
+  var s=String(p.endDate||''); if(s.length<7) return null;
+  return s.slice(0,4)+'-'+s.slice(5,7);
+}
+function monthLabel(m){
+  var y=parseInt(m.slice(0,4),10), mo=parseInt(m.slice(5,7),10);
+  return MONTHS_BG[mo-1]+' '+y;
+}
 function renderFinance(){
-  var totalProfit=0, byMonth={};
+  var byMonth={}, total=0, cnt=0;
   DATA.policies.forEach(function(p){
-    var pr=num(p.profit);
-    totalProfit+=pr;
-    var m=String(p.endDate||'').slice(0,7);
-    if(m){ byMonth[m]=(byMonth[m]||0)+pr; }
+    var m=endMonth(p), pr=num(p.profit);
+    total+=pr; cnt++;
+    if(m){ byMonth[m]=byMonth[m]||{sum:0,n:0}; byMonth[m].sum+=pr; byMonth[m].n++; }
   });
+  var now=new Date(), dm=String(now.getFullYear())+'-'+('0'+(now.getMonth()+1)).slice(-2);
   var html='<div class="section-title">💰 Финансов преглед</div>';
-  html+='<div class="kpi" style="margin-bottom:12px"><div><b>'+money(totalProfit)+'</b><span>Обща печалба</span></div>'
-    +'<div><b>'+DATA.policies.length+'</b><span>полици</span></div></div>';
-  html+='<div class="section-title">По месеци</div>';
-  Object.keys(byMonth).sort().forEach(function(m){
-    html+='<div class="list-item"><div class="name">'+m+'</div><div class="meta">💰 '+money(byMonth[m])+'</div></div>';
+  html+='<div class="kpi" style="margin-bottom:12px">'
+    +'<div><b>'+money(total)+'</b><span>Общо печалба</span></div>'
+    +'<div><b>'+cnt+'</b><span>полици</span></div></div>';
+  html+='<div class="section-title">По месеци (печалба)</div>';
+  if(!Object.keys(byMonth).length){ html+='<div class="empty">Няма данни.</div>'; $('main').innerHTML=html; return; }
+  var keys=Object.keys(byMonth).sort();   // хронологично
+  keys.forEach(function(m){
+    var past=m<dm, cur=m===dm;
+    var tag = cur?'<span class="badge ok">до момента</span>':(past?'<span class="badge">приключил</span>':'<span class="badge warn">бъдещ</span>');
+    html+='<div class="list-item" style="'+(cur?'border-color:var(--accent)':'')+'">'
+      +'<div class="name">'+monthLabel(m)+' '+tag+'</div>'
+      +'<div class="meta">💰 '+money(byMonth[m].sum)+' · '+byMonth[m].n+' '+(byMonth[m].n===1?'полица':'полици')+'</div>'
+      +'</div>';
   });
   $('main').innerHTML=html;
 }
