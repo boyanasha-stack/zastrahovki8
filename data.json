@@ -392,7 +392,7 @@
   },
   {
    "id": "c65",
-   "name": "Dimityr GLE Arvi",
+   "name": "Jujkata",
    "phone": "",
    "notes": ""
   },
@@ -1507,7 +1507,7 @@
    "make": "Tucson",
    "model": "",
    "year": "",
-   "plate": "",
+   "plate": "CB9451OC",
    "vin": "",
    "notes": "",
    "address": ""
@@ -1547,6 +1547,17 @@
   },
   {
    "id": "car101",
+   "clientId": "c65",
+   "make": "Range",
+   "model": "Rover Evoque",
+   "year": "",
+   "plate": "CB0046AO",
+   "vin": "",
+   "notes": "",
+   "address": ""
+  },
+  {
+   "id": "car102",
    "clientId": "c7",
    "make": "Fiat",
    "model": "500 X",
@@ -1557,7 +1568,7 @@
    "address": ""
   },
   {
-   "id": "car102",
+   "id": "car103",
    "clientId": "c67",
    "make": "Skoda",
    "model": "Superb",
@@ -1568,7 +1579,7 @@
    "address": ""
   },
   {
-   "id": "car103",
+   "id": "car104",
    "clientId": "c68",
    "make": "Cupra",
    "model": "Formentor",
@@ -1579,7 +1590,7 @@
    "address": ""
   },
   {
-   "id": "car104",
+   "id": "car105",
    "clientId": "c70",
    "make": "BMW",
    "model": "GT",
@@ -1590,7 +1601,7 @@
    "address": ""
   },
   {
-   "id": "car105",
+   "id": "car106",
    "clientId": "c3",
    "make": "Iveco",
    "model": "",
@@ -1601,7 +1612,7 @@
    "address": ""
   },
   {
-   "id": "car106",
+   "id": "car107",
    "clientId": "c23",
    "make": "BMW",
    "model": "M3",
@@ -1612,7 +1623,7 @@
    "address": ""
   },
   {
-   "id": "car107",
+   "id": "car108",
    "clientId": "c68",
    "make": "SQ7",
    "model": "",
@@ -1623,7 +1634,7 @@
    "address": ""
   },
   {
-   "id": "car108",
+   "id": "car109",
    "clientId": "c71",
    "make": "Cupra",
    "model": "2",
@@ -1645,7 +1656,7 @@
    "vnoska": "1/1",
    "suma": "2148.85",
    "suma_client": "2148.85",
-   "profit": "463.4774509803922",
+   "profit": "463.477451",
    "commission": "0.22",
    "month": "Януари"
   },
@@ -1659,7 +1670,7 @@
    "vnoska": "1/1",
    "suma": "3054.49",
    "suma_client": "3054.49",
-   "profit": "658.8115686274509",
+   "profit": "658.811569",
    "commission": "0.22",
    "month": "Януари"
   },
@@ -1673,7 +1684,7 @@
    "vnoska": "1/1",
    "suma": "230.47",
    "suma_client": "230.47",
-   "profit": "27.13451764705883",
+   "profit": "27.134518",
    "commission": "0.12",
    "month": "Януари"
   },
@@ -1687,7 +1698,7 @@
    "vnoska": "1/4",
    "suma": "89.51",
    "suma_client": "89.51",
-   "profit": "19.306078431372555",
+   "profit": "77.224314",
    "commission": "0.22",
    "month": "Януари"
   },
@@ -1701,7 +1712,7 @@
    "vnoska": "1/1",
    "suma": "BulIns",
    "suma_client": "",
-   "profit": "",
+   "profit": "0.0",
    "commission": "",
    "month": "Януари"
   },
@@ -1715,7 +1726,7 @@
    "vnoska": "4/4",
    "suma": "229.31",
    "suma_client": "229.31",
-   "profit": "49.459019607843146",
+   "profit": "49.45902",
    "commission": "0.22",
    "month": "Януари"
   },
@@ -1729,7 +1740,7 @@
    "vnoska": "1/1",
    "suma": "581",
    "suma_client": "581",
-   "profit": "125.31372549019608",
+   "profit": "125.313725",
    "commission": "0.22",
    "month": "Януари"
   },
@@ -1743,7 +1754,7 @@
    "vnoska": "",
    "suma": "",
    "suma_client": "",
-   "profit": "",
+   "profit": "0.0",
    "commission": "",
    "month": "Януари"
   },
@@ -1757,7 +1768,7 @@
    "vnoska": "1/1",
    "suma": "807.84",
    "suma_client": "728.64",
-   "profit": "95.03999999999996",
+   "profit": "95.04",
    "commission": "0.22",
    "month": "Януари"
   },
@@ -1771,7 +1782,7 @@
    "vnoska": "1/1",
    "suma": "",
    "suma_client": "0",
-   "profit": "0",
+   "profit": "0.0",
    "commission": "0.22",
    "month": "Януари"
   },
@@ -1785,7 +1796,7 @@
    "vnoska": "1/1",
    "suma": "393.67",
    "suma_client": "393.67",
-   "profit": "84.90921568627454",
+   "profit": "84.909216",
    "commission": "0.22",
    "month": "Януари"
   },
@@ -1799,7 +1810,7 @@
    "vnoska": "1/4",
    "suma": "219.84",
    "suma_client": "224.24",
-   "profit": "51.81647058823529",
+   "profit": "198.465882",
    "commission": "0.22",
    "month": "Януари"
   },
@@ -1813,7 +1824,7 @@
    "vnoska": "4/4",
    "suma": "205.1",
    "suma_client": "205.1",
-   "profit": "44.23725490196077",
+   "profit": "44.237255",
    "commission": "0.22",
    "month": "Януари"
   },
@@ -1827,7 +1838,7 @@
    "vnoska": "4/4",
    "suma": "344.2",
    "suma_client": "310.4549019607843",
-   "profit": "40.49411764705883",
+   "profit": "40.494118",
    "commission": "0.22",
    "month": "Януари"
   },
@@ -1841,7 +1852,7 @@
    "vnoska": "1/1",
    "suma": "575.48",
    "suma_client": "519.0603921568628",
-   "profit": "67.70352941176475",
+   "profit": "67.703529",
    "commission": "0.22",
    "month": "Януари"
   },
@@ -1855,7 +1866,7 @@
    "vnoska": "4/4",
    "suma": "320.68",
    "suma_client": "320.68",
-   "profit": "69.16627450980391",
+   "profit": "69.166275",
    "commission": "0.22",
    "month": "Януари"
   },
@@ -1869,7 +1880,7 @@
    "vnoska": "1/1",
    "suma": "170.99",
    "suma_client": "170.99",
-   "profit": "20.136870588235297",
+   "profit": "20.136871",
    "commission": "0.12",
    "month": "Януари"
   },
@@ -1883,7 +1894,7 @@
    "vnoska": "1/4",
    "suma": "367.71",
    "suma_client": "367.71",
-   "profit": "79.31",
+   "profit": "317.24",
    "commission": "0.22",
    "month": "Януари"
   },
@@ -1897,7 +1908,7 @@
    "vnoska": "1/1",
    "suma": "188.45",
    "suma_client": "188.45",
-   "profit": "22.190988235294128",
+   "profit": "22.190988",
    "commission": "0.12",
    "month": "Януари"
   },
@@ -1911,7 +1922,7 @@
    "vnoska": "4/4",
    "suma": "174.49",
    "suma_client": "174.49",
-   "profit": "20.52823529411765",
+   "profit": "20.528235",
    "commission": "0.12",
    "month": "Януари"
   },
@@ -1925,7 +1936,7 @@
    "vnoska": "3/4",
    "suma": "86.05",
    "suma_client": "86.05",
-   "profit": "18.55980392156863",
+   "profit": "55.679412",
    "commission": "0.22",
    "month": "Януари"
   },
@@ -1939,7 +1950,7 @@
    "vnoska": "1/1",
    "suma": "1040",
    "suma_client": "938.0392156862745",
-   "profit": "122.3529411764705",
+   "profit": "122.352941",
    "commission": "0.22",
    "month": "Януари"
   },
@@ -1953,7 +1964,7 @@
    "vnoska": "1/1",
    "suma": "188.45",
    "suma_client": "188.45",
-   "profit": "22.190988235294128",
+   "profit": "22.190988",
    "commission": "0.12",
    "month": "Януари"
   },
@@ -1967,7 +1978,7 @@
    "vnoska": "",
    "suma": "",
    "suma_client": "0",
-   "profit": "0",
+   "profit": "0.0",
    "commission": "",
    "month": "Януари"
   },
@@ -1981,7 +1992,7 @@
    "vnoska": "1/4",
    "suma": "367.71",
    "suma_client": "367.71",
-   "profit": "79.31",
+   "profit": "237.93",
    "commission": "0.22",
    "month": "Януари"
   },
@@ -1995,7 +2006,7 @@
    "vnoska": "1/1",
    "suma": "188.45",
    "suma_client": "188.45",
-   "profit": "22.190988235294128",
+   "profit": "22.190988",
    "commission": "0.12",
    "month": "Януари"
   },
@@ -2009,7 +2020,7 @@
    "vnoska": "1/4",
    "suma": "108.72",
    "suma_client": "108.72",
-   "profit": "23.449411764705886",
+   "profit": "46.898824",
    "commission": "0.22",
    "month": "Януари"
   },
@@ -2023,7 +2034,7 @@
    "vnoska": "1/1",
    "suma": "188.45",
    "suma_client": "188.45",
-   "profit": "22.190988235294128",
+   "profit": "22.190988",
    "commission": "0.12",
    "month": "Януари"
   },
@@ -2037,7 +2048,7 @@
    "vnoska": "1/1",
    "suma": "230.47",
    "suma_client": "230.47",
-   "profit": "27.13451764705883",
+   "profit": "27.134518",
    "commission": "0.12",
    "month": "Февруари"
   },
@@ -2051,7 +2062,7 @@
    "vnoska": "1/1",
    "suma": "204.8",
    "suma_client": "204.8",
-   "profit": "24.11451764705882",
+   "profit": "24.114518",
    "commission": "0.12",
    "month": "Февруари"
   },
@@ -2065,7 +2076,7 @@
    "vnoska": "1/1",
    "suma": "460.47",
    "suma_client": "460.47",
-   "profit": "99.31705882352941",
+   "profit": "99.317059",
    "commission": "0.22",
    "month": "Февруари"
   },
@@ -2093,7 +2104,7 @@
    "vnoska": "2/4",
    "suma": "466.58",
    "suma_client": "466.58",
-   "profit": "100.6349019607843",
+   "profit": "256.161569",
    "commission": "0.22",
    "month": "Февруари"
   },
@@ -2107,7 +2118,7 @@
    "vnoska": "4/4",
    "suma": "476.85",
    "suma_client": "476.85",
-   "profit": "102.85000000000002",
+   "profit": "102.85",
    "commission": "0.22",
    "month": "Февруари"
   },
@@ -2121,7 +2132,7 @@
    "vnoska": "1/1",
    "suma": "5867.28",
    "suma_client": "5867.28",
-   "profit": "1265.491764705882",
+   "profit": "1265.491765",
    "commission": "0.22",
    "month": "Февруари"
   },
@@ -2135,7 +2146,7 @@
    "vnoska": "1/1",
    "suma": "241.7",
    "suma_client": "241.7",
-   "profit": "52.1313725490196",
+   "profit": "52.131373",
    "commission": "0.22",
    "month": "Февруари"
   },
@@ -2149,7 +2160,7 @@
    "vnoska": "1/1",
    "suma": "449.8",
    "suma_client": "230.47",
-   "profit": "-166.39195294117647",
+   "profit": "-166.391953",
    "commission": "0.12",
    "month": "Февруари"
   },
@@ -2163,7 +2174,7 @@
    "vnoska": "3/4",
    "suma": "782.28",
    "suma_client": "613.5529411764705",
-   "profit": "0",
+   "profit": "0.0",
    "commission": "0.22",
    "month": "Май"
   },
@@ -2177,7 +2188,7 @@
    "vnoska": "1/1",
    "suma": "",
    "suma_client": "0",
-   "profit": "0",
+   "profit": "0.0",
    "commission": "0.22",
    "month": "Февруари"
   },
@@ -2191,7 +2202,7 @@
    "vnoska": "",
    "suma": "",
    "suma_client": "",
-   "profit": "",
+   "profit": "0.0",
    "commission": "",
    "month": "Февруари"
   },
@@ -2205,7 +2216,7 @@
    "vnoska": "3/4",
    "suma": "230.08",
    "suma_client": "230.08",
-   "profit": "49.625098039215686",
+   "profit": "76.69451",
    "commission": "0.22",
    "month": "Февруари"
   },
@@ -2219,7 +2230,7 @@
    "vnoska": "",
    "suma": "380.02",
    "suma_client": "380.02",
-   "profit": "81.96509803921572",
+   "profit": "81.965098",
    "commission": "0.22",
    "month": "Февруари"
   },
@@ -2233,7 +2244,7 @@
    "vnoska": "1/1",
    "suma": "",
    "suma_client": "",
-   "profit": "",
+   "profit": "0.0",
    "commission": "",
    "month": "Февруари"
   },
@@ -2247,7 +2258,7 @@
    "vnoska": "1/4",
    "suma": "135.81",
    "suma_client": "135.81",
-   "profit": "29.292352941176475",
+   "profit": "87.877059",
    "commission": "0.22",
    "month": "Февруари"
   },
@@ -2261,7 +2272,7 @@
    "vnoska": "1/1",
    "suma": "",
    "suma_client": "0",
-   "profit": "0",
+   "profit": "0.0",
    "commission": "0.22",
    "month": "Февруари"
   },
@@ -2275,7 +2286,7 @@
    "vnoska": "2/4",
    "suma": "394.08",
    "suma_client": "316.8094117647059",
-   "profit": "7.727058823529433",
+   "profit": "23.181176",
    "commission": "0.22",
    "month": "Февруари"
   },
@@ -2289,7 +2300,7 @@
    "vnoska": "3/4",
    "suma": "80.26",
    "suma_client": "80.26",
-   "profit": "17.310980392156864",
+   "profit": "50.798431",
    "commission": "0.22",
    "month": "Март"
   },
@@ -2303,7 +2314,7 @@
    "vnoska": "4/4",
    "suma": "424.38",
    "suma_client": "424.38",
-   "profit": "91.53294117647056",
+   "profit": "91.532941",
    "commission": "0.22",
    "month": "Март"
   },
@@ -2317,7 +2328,7 @@
    "vnoska": "4/4",
    "suma": "275.17",
    "suma_client": "248.19254901960787",
-   "profit": "32.37294117647062",
+   "profit": "32.372941",
    "commission": "0.22",
    "month": "Март"
   },
@@ -2331,7 +2342,7 @@
    "vnoska": "1/1",
    "suma": "230.47",
    "suma_client": "230.47",
-   "profit": "27.13451764705883",
+   "profit": "27.134518",
    "commission": "0.12",
    "month": "Март"
   },
@@ -2345,7 +2356,7 @@
    "vnoska": "1/4",
    "suma": "1884.96",
    "suma_client": "1570.8",
-   "profit": "92.39999999999986",
+   "profit": "100.453922",
    "commission": "0.22",
    "month": "Март"
   },
@@ -2359,7 +2370,7 @@
    "vnoska": "3/4",
    "suma": "129.01",
    "suma_client": "129.01",
-   "profit": "27.825686274509806",
+   "profit": "83.477059",
    "commission": "0.22",
    "month": "Март"
   },
@@ -2373,7 +2384,7 @@
    "vnoska": "1/1",
    "suma": "179.26",
    "suma_client": "179.26",
-   "profit": "21.10981176470588",
+   "profit": "21.109812",
    "commission": "0.12",
    "month": "Март"
   },
@@ -2387,7 +2398,7 @@
    "vnoska": "2/4",
    "suma": "484.5",
    "suma_client": "437",
-   "profit": "57",
+   "profit": "115.287059",
    "commission": "0.22",
    "month": "Март"
   },
@@ -2401,7 +2412,7 @@
    "vnoska": "1/1",
    "suma": "169.03",
    "suma_client": "169.03",
-   "profit": "19.90628235294119",
+   "profit": "19.906282",
    "commission": "0.12",
    "month": "Март"
   },
@@ -2415,7 +2426,7 @@
    "vnoska": "1/1",
    "suma": "475.63",
    "suma_client": "475.63",
-   "profit": "55.95647058823528",
+   "profit": "55.956471",
    "commission": "0.12",
    "month": "Март"
   },
@@ -2429,7 +2440,7 @@
    "vnoska": "2/4",
    "suma": "91.27",
    "suma_client": "91.27",
-   "profit": "19.685686274509806",
+   "profit": "59.057059",
    "commission": "0.22",
    "month": "Март"
   },
@@ -2443,7 +2454,7 @@
    "vnoska": "",
    "suma": "283",
    "suma_client": "283",
-   "profit": "0",
+   "profit": "0.0",
    "commission": "",
    "month": "Март"
   },
@@ -2457,7 +2468,7 @@
    "vnoska": "",
    "suma": "",
    "suma_client": "",
-   "profit": "",
+   "profit": "0.0",
    "commission": "0.22",
    "month": "Март"
   },
@@ -2471,7 +2482,7 @@
    "vnoska": "1/1",
    "suma": "910.66",
    "suma_client": "910.66",
-   "profit": "196.416862745098",
+   "profit": "196.416863",
    "commission": "0.22",
    "month": "Март"
   },
@@ -2485,7 +2496,7 @@
    "vnoska": "1/1",
    "suma": "237.19",
    "suma_client": "237.19",
-   "profit": "27.925105882352938",
+   "profit": "27.925106",
    "commission": "0.12",
    "month": "Март"
   },
@@ -2499,7 +2510,7 @@
    "vnoska": "",
    "suma": "1230.12",
    "suma_client": "1037.1599999999999",
-   "profit": "72.3599999999999",
+   "profit": "72.36",
    "commission": "0.22",
    "month": "Март"
   },
@@ -2513,7 +2524,7 @@
    "vnoska": "",
    "suma": "204.8",
    "suma_client": "204.8",
-   "profit": "24.11451764705882",
+   "profit": "24.114518",
    "commission": "0.12",
    "month": "Март"
   },
@@ -2527,7 +2538,7 @@
    "vnoska": "4/4",
    "suma": "74.32",
    "suma_client": "74.32",
-   "profit": "16.02980392156863",
+   "profit": "32.059608",
    "commission": "0.22",
    "month": "Юни"
   },
@@ -2541,7 +2552,7 @@
    "vnoska": "",
    "suma": "383.47",
    "suma_client": "383.47",
-   "profit": "82.70921568627455",
+   "profit": "82.709216",
    "commission": "0.22",
    "month": "Март"
   },
@@ -2555,7 +2566,7 @@
    "vnoska": "3/4",
    "suma": "117.71",
    "suma_client": "94.62960784313725",
-   "profit": "2.3080392156862786",
+   "profit": "6.910196",
    "commission": "0.22",
    "month": "Юни"
   },
@@ -2569,7 +2580,7 @@
    "vnoska": "1/1",
    "suma": "188.45",
    "suma_client": "188.45",
-   "profit": "22.190988235294128",
+   "profit": "22.190988",
    "commission": "0.12",
    "month": "Март"
   },
@@ -2583,7 +2594,7 @@
    "vnoska": "1/1",
    "suma": "633.4",
    "suma_client": "633.4",
-   "profit": "136.6156862745098",
+   "profit": "136.615686",
    "commission": "0.22",
    "month": "Март"
   },
@@ -2597,7 +2608,7 @@
    "vnoska": "2/4",
    "suma": "278.07",
    "suma_client": "278.07",
-   "profit": "59.97588235294117",
+   "profit": "125.404118",
    "commission": "0.22",
    "month": "Март"
   },
@@ -2611,7 +2622,7 @@
    "vnoska": "3,4/4",
    "suma": "820.03",
    "suma_client": "838.54",
-   "profit": "195.3792156862745",
+   "profit": "285.81",
    "commission": "0.22",
    "month": "Юни"
   },
@@ -2625,7 +2636,7 @@
    "vnoska": "",
    "suma": "165.7",
    "suma_client": "165.7",
-   "profit": "35.73921568627452",
+   "profit": "35.739216",
    "commission": "0.22",
    "month": "Март"
   },
@@ -2639,7 +2650,7 @@
    "vnoska": "",
    "suma": "200.63",
    "suma_client": "200.63",
-   "profit": "43.27313725490197",
+   "profit": "43.273137",
    "commission": "0.22",
    "month": "Март"
   },
@@ -2653,7 +2664,7 @@
    "vnoska": "",
    "suma": "307.98",
    "suma_client": "307.98",
-   "profit": "36.2533411764706",
+   "profit": "36.253341",
    "commission": "0.12",
    "month": "Март"
   },
@@ -2667,7 +2678,7 @@
    "vnoska": "3/4",
    "suma": "163.79",
    "suma_client": "163.79",
-   "profit": "35.32725490196077",
+   "profit": "105.981765",
    "commission": "0.22",
    "month": "Юни"
   },
@@ -2681,7 +2692,7 @@
    "vnoska": "",
    "suma": "",
    "suma_client": "0",
-   "profit": "",
+   "profit": "0.0",
    "commission": "",
    "month": "Март"
   },
@@ -2695,7 +2706,7 @@
    "vnoska": "1/1",
    "suma": "",
    "suma_client": "0",
-   "profit": "0",
+   "profit": "0.0",
    "commission": "0.22",
    "month": "Април"
   },
@@ -2709,7 +2720,7 @@
    "vnoska": "1/1",
    "suma": "334.89",
    "suma_client": "334.89",
-   "profit": "72.23117647058825",
+   "profit": "72.231176",
    "commission": "0.22",
    "month": "Април"
   },
@@ -2723,7 +2734,7 @@
    "vnoska": "1/1",
    "suma": "333.32",
    "suma_client": "333.32",
-   "profit": "71.89254901960783",
+   "profit": "71.892549",
    "commission": "0.22",
    "month": "Април"
   },
@@ -2737,7 +2748,7 @@
    "vnoska": "1/1",
    "suma": "836.4",
    "suma_client": "836.4",
-   "profit": "180.39999999999998",
+   "profit": "180.4",
    "commission": "0.22",
    "month": "Април"
   },
@@ -2751,7 +2762,7 @@
    "vnoska": "1/4",
    "suma": "206.09",
    "suma_client": "206.09",
-   "profit": "44.45078431372551",
+   "profit": "133.352353",
    "commission": "0.22",
    "month": "Април"
   },
@@ -2765,7 +2776,7 @@
    "vnoska": "",
    "suma": "",
    "suma_client": "0",
-   "profit": "0",
+   "profit": "0.0",
    "commission": "0.22",
    "month": "Април"
   },
@@ -2779,7 +2790,7 @@
    "vnoska": "1/1",
    "suma": "790",
    "suma_client": "712.5490196078431",
-   "profit": "92.94117647058818",
+   "profit": "92.941176",
    "commission": "0.22",
    "month": "Април"
   },
@@ -2793,7 +2804,7 @@
    "vnoska": "1/1",
    "suma": "169.03",
    "suma_client": "169.03",
-   "profit": "36.45745098039217",
+   "profit": "36.457451",
    "commission": "0.22",
    "month": "Април"
   },
@@ -2807,7 +2818,7 @@
    "vnoska": "1/1",
    "suma": "230.47",
    "suma_client": "230.47",
-   "profit": "49.70921568627452",
+   "profit": "49.709216",
    "commission": "0.22",
    "month": "Април"
   },
@@ -2821,7 +2832,7 @@
    "vnoska": "1/1",
    "suma": "",
    "suma_client": "0",
-   "profit": "0",
+   "profit": "0.0",
    "commission": "0.22",
    "month": "Април"
   },
@@ -2835,7 +2846,7 @@
    "vnoska": "1/1",
    "suma": "471.24",
    "suma_client": "411.18",
-   "profit": "41.579999999999984",
+   "profit": "41.58",
    "commission": "0.22",
    "month": "Април"
   },
@@ -2849,7 +2860,7 @@
    "vnoska": "1/4",
    "suma": "190.12",
    "suma_client": "190.12",
-   "profit": "41.006274509803916",
+   "profit": "123.018824",
    "commission": "0.22",
    "month": "Април"
   },
@@ -2863,7 +2874,7 @@
    "vnoska": "1/4",
    "suma": "314.16",
    "suma_client": "314.16",
-   "profit": "67.75999999999999",
+   "profit": "203.28",
    "commission": "0.22",
    "month": "Април"
   },
@@ -2877,7 +2888,7 @@
    "vnoska": "1/4",
    "suma": "224.4",
    "suma_client": "224.4",
-   "profit": "48.400000000000006",
+   "profit": "145.2",
    "commission": "0.22",
    "month": "Април"
   },
@@ -2891,7 +2902,7 @@
    "vnoska": "1/4",
    "suma": "186.75",
    "suma_client": "186.75",
-   "profit": "40.279411764705884",
+   "profit": "120.838235",
    "commission": "0.22",
    "month": "Април"
   },
@@ -2905,7 +2916,7 @@
    "vnoska": "1/1",
    "suma": "382.7",
    "suma_client": "382.7",
-   "profit": "82.54313725490198",
+   "profit": "82.543137",
    "commission": "0.22",
    "month": "Април"
   },
@@ -2919,7 +2930,7 @@
    "vnoska": "1/1",
    "suma": "188.45",
    "suma_client": "188.45",
-   "profit": "40.64607843137256",
+   "profit": "40.646078",
    "commission": "0.22",
    "month": "Април"
   },
@@ -2933,7 +2944,7 @@
    "vnoska": "1/1",
    "suma": "1485.19",
    "suma_client": "1237.6583333333333",
-   "profit": "72.80343137254886",
+   "profit": "72.803431",
    "commission": "0.22",
    "month": "Април"
   },
@@ -2947,7 +2958,7 @@
    "vnoska": "1/1",
    "suma": "188.45",
    "suma_client": "188.45",
-   "profit": "40.64607843137256",
+   "profit": "40.646078",
    "commission": "0.22",
    "month": "Април"
   },
@@ -2961,7 +2972,7 @@
    "vnoska": "1/1",
    "suma": "3165.16",
    "suma_client": "3165.16",
-   "profit": "682.6815686274508",
+   "profit": "682.681569",
    "commission": "0.22",
    "month": "Април"
   },
@@ -2975,7 +2986,7 @@
    "vnoska": "1/1",
    "suma": "230.47",
    "suma_client": "230.47",
-   "profit": "",
+   "profit": "0.0",
    "commission": "0.12",
    "month": "Май"
   },
@@ -2989,7 +3000,7 @@
    "vnoska": "1/4",
    "suma": "486.95",
    "suma_client": "486.95",
-   "profit": "",
+   "profit": "0.0",
    "commission": "0.22",
    "month": "Май"
   },
@@ -3003,7 +3014,7 @@
    "vnoska": "1/1",
    "suma": "170.74",
    "suma_client": "170.74",
-   "profit": "20.107458823529413",
+   "profit": "20.107459",
    "commission": "0.12",
    "month": "Май"
   },
@@ -3017,7 +3028,7 @@
    "vnoska": "1/1",
    "suma": "715.28",
    "suma_client": "645.1545098039215",
-   "profit": "84.1505882352941",
+   "profit": "84.150588",
    "commission": "0.22",
    "month": "Май"
   },
@@ -3031,7 +3042,7 @@
    "vnoska": "1/1",
    "suma": "230.47",
    "suma_client": "230.47",
-   "profit": "27.13451764705883",
+   "profit": "27.134518",
    "commission": "0.12",
    "month": "Май"
   },
@@ -3045,7 +3056,7 @@
    "vnoska": "1/1",
    "suma": "188.45",
    "suma_client": "188.45",
-   "profit": "22.190988235294128",
+   "profit": "22.190988",
    "commission": "0.12",
    "month": "Май"
   },
@@ -3059,7 +3070,7 @@
    "vnoska": "2,3,4/4",
    "suma": "5654.88",
    "suma_client": "4712.4",
-   "profit": "277.1999999999998",
+   "profit": "277.2",
    "commission": "0.22",
    "month": "Май"
   },
@@ -3073,7 +3084,7 @@
    "vnoska": "1/1",
    "suma": "688.5",
    "suma_client": "621",
-   "profit": "81",
+   "profit": "81.0",
    "commission": "0.22",
    "month": "Май"
   },
@@ -3087,7 +3098,7 @@
    "vnoska": "1/4",
    "suma": "976.75",
    "suma_client": "880.9901960784314",
-   "profit": "114.91176470588243",
+   "profit": "114.911765",
    "commission": "0.22",
    "month": "Май"
   },
@@ -3101,7 +3112,7 @@
    "vnoska": "1/1",
    "suma": "230.47",
    "suma_client": "230.47",
-   "profit": "27.13451764705883",
+   "profit": "27.134518",
    "commission": "0.12",
    "month": "Май"
   },
@@ -3115,7 +3126,7 @@
    "vnoska": "1/1",
    "suma": "355.58",
    "suma_client": "355.58",
-   "profit": "76.69372549019607",
+   "profit": "76.693725",
    "commission": "0.22",
    "month": "Май"
   },
@@ -3129,7 +3140,7 @@
    "vnoska": "1/1",
    "suma": "249.9",
    "suma_client": "249.9",
-   "profit": "53.900000000000006",
+   "profit": "53.9",
    "commission": "0.22",
    "month": "Май"
   },
@@ -3143,7 +3154,7 @@
    "vnoska": "1/1",
    "suma": "144.97",
    "suma_client": "144.97",
-   "profit": "17.07569411764706",
+   "profit": "17.075694",
    "commission": "0.12",
    "month": "Май"
   },
@@ -3157,7 +3168,7 @@
    "vnoska": "1/4",
    "suma": "1043.46",
    "suma_client": "1043.46",
-   "profit": "225.05999999999995",
+   "profit": "225.06",
    "commission": "0.22",
    "month": "Май"
   },
@@ -3171,7 +3182,7 @@
    "vnoska": "1/1",
    "suma": "230.47",
    "suma_client": "230.47",
-   "profit": "27.13451764705883",
+   "profit": "27.134518",
    "commission": "0.12",
    "month": "Май"
   },
@@ -3185,7 +3196,7 @@
    "vnoska": "1/1",
    "suma": "826.36",
    "suma_client": "826.36",
-   "profit": "178.23450980392158",
+   "profit": "178.23451",
    "commission": "0.22",
    "month": "Май"
   },
@@ -3199,7 +3210,7 @@
    "vnoska": "1/1",
    "suma": "3051.28",
    "suma_client": "2752.1349019607846",
-   "profit": "358.97411764705885",
+   "profit": "358.974118",
    "commission": "0.22",
    "month": "Май"
   },
@@ -3213,7 +3224,7 @@
    "vnoska": "1/4",
    "suma": "270.54",
    "suma_client": "270.54",
-   "profit": "58.351764705882346",
+   "profit": "193.626765",
    "commission": "0.22",
    "month": "Юни"
   },
@@ -3227,7 +3238,7 @@
    "vnoska": "1/1",
    "suma": "230.47",
    "suma_client": "230.47",
-   "profit": "27.134117647058815",
+   "profit": "27.134118",
    "commission": "0.12",
    "month": "Юни"
   },
@@ -3241,7 +3252,7 @@
    "vnoska": "1/1",
    "suma": "1264.8",
    "suma_client": "1165.6",
-   "profit": "173.5999999999999",
+   "profit": "173.6",
    "commission": "0.22",
    "month": "Юни"
   },
@@ -3255,7 +3266,7 @@
    "vnoska": "1/4",
    "suma": "299",
    "suma_client": "299",
-   "profit": "64.49019607843138",
+   "profit": "128.980392",
    "commission": "0.22",
    "month": "Юни"
   },
@@ -3269,7 +3280,7 @@
    "vnoska": "1/1",
    "suma": "784.89",
    "suma_client": "784.89",
-   "profit": "169.28999999999996",
+   "profit": "169.29",
    "commission": "0.22",
    "month": "Юни"
   },
@@ -3283,7 +3294,7 @@
    "vnoska": "1/1",
    "suma": "156.25",
    "suma_client": "156.25",
-   "profit": "18.402352941176474",
+   "profit": "18.402353",
    "commission": "0.12",
    "month": "Юни"
   },
@@ -3297,7 +3308,7 @@
    "vnoska": "1/4",
    "suma": "160.48",
    "suma_client": "160.48",
-   "profit": "34.61333333333333",
+   "profit": "69.226667",
    "commission": "0.22",
    "month": "Юни"
   },
@@ -3311,7 +3322,7 @@
    "vnoska": "1/1",
    "suma": "1185.68",
    "suma_client": "1185.68",
-   "profit": "139.51176470588234",
+   "profit": "139.511765",
    "commission": "0.12",
    "month": "Юни"
   },
@@ -3325,7 +3336,7 @@
    "vnoska": "1/1",
    "suma": "306.98",
    "suma_client": "306.98",
-   "profit": "66.21137254901961",
+   "profit": "66.211373",
    "commission": "0.22",
    "month": "Юни"
   },
@@ -3339,7 +3350,7 @@
    "vnoska": "1/4",
    "suma": "183.79",
    "suma_client": "183.79",
-   "profit": "39.64098039215688",
+   "profit": "79.281961",
    "commission": "0.22",
    "month": "Юни"
   },
@@ -3353,7 +3364,7 @@
    "vnoska": "1/1",
    "suma": "171.1",
    "suma_client": "171.1",
-   "profit": "20.14941176470589",
+   "profit": "20.149412",
    "commission": "0.12",
    "month": "Юни"
   },
@@ -3367,7 +3378,7 @@
    "vnoska": "1/1",
    "suma": "383.72",
    "suma_client": "383.72",
-   "profit": "82.76313725490195",
+   "profit": "82.763137",
    "commission": "0.22",
    "month": "Юни"
   },
@@ -3381,7 +3392,7 @@
    "vnoska": "1/1",
    "suma": "169.03",
    "suma_client": "169.03",
-   "profit": "19.90628235294119",
+   "profit": "19.906282",
    "commission": "0.12",
    "month": "Юли"
   },
@@ -3409,7 +3420,7 @@
    "vnoska": "1/1",
    "suma": "550.8",
    "suma_client": "496.79999999999995",
-   "profit": "64.80000000000001",
+   "profit": "64.8",
    "commission": "0.22",
    "month": "Юли"
   },
@@ -3423,7 +3434,7 @@
    "vnoska": "1/1",
    "suma": "188.45",
    "suma_client": "188.45",
-   "profit": "22.190988235294128",
+   "profit": "22.190988",
    "commission": "0.12",
    "month": "Юли"
   },
@@ -3437,7 +3448,7 @@
    "vnoska": "1/1",
    "suma": "502.76",
    "suma_client": "502.76",
-   "profit": "108.43843137254902",
+   "profit": "108.438431",
    "commission": "0.22",
    "month": "Юли"
   },
@@ -3451,7 +3462,7 @@
    "vnoska": "1/1",
    "suma": "204.8",
    "suma_client": "204.8",
-   "profit": "24.11451764705882",
+   "profit": "24.114518",
    "commission": "0.12",
    "month": "Юли"
   },
@@ -3465,7 +3476,7 @@
    "vnoska": "1/1",
    "suma": "502.76",
    "suma_client": "502.76",
-   "profit": "108.43843137254902",
+   "profit": "108.438431",
    "commission": "0.22",
    "month": "Юли"
   },
@@ -3479,7 +3490,7 @@
    "vnoska": "1/1",
    "suma": "204.8",
    "suma_client": "204.8",
-   "profit": "24.11451764705882",
+   "profit": "24.114518",
    "commission": "0.12",
    "month": "Юли"
   },
@@ -3493,7 +3504,7 @@
    "vnoska": "1/1",
    "suma": "502.76",
    "suma_client": "502.76",
-   "profit": "108.43843137254902",
+   "profit": "108.438431",
    "commission": "0.22",
    "month": "Юли"
   },
@@ -3507,7 +3518,7 @@
    "vnoska": "1/1",
    "suma": "204.8",
    "suma_client": "204.8",
-   "profit": "24.11451764705882",
+   "profit": "24.114518",
    "commission": "0.12",
    "month": "Юли"
   },
@@ -3521,7 +3532,7 @@
    "vnoska": "1/1",
    "suma": "348.84",
    "suma_client": "348.84",
-   "profit": "75.24000000000001",
+   "profit": "75.24",
    "commission": "0.22",
    "month": "Юли"
   },
@@ -3535,7 +3546,7 @@
    "vnoska": "1/1",
    "suma": "188.45",
    "suma_client": "188.45",
-   "profit": "22.190988235294128",
+   "profit": "22.190988",
    "commission": "0.12",
    "month": "Юли"
   },
@@ -3549,7 +3560,7 @@
    "vnoska": "1/1",
    "suma": "161.91",
    "suma_client": "161.91",
-   "profit": "19.068635294117655",
+   "profit": "19.068635",
    "commission": "0.12",
    "month": "Юли"
   },
@@ -3563,7 +3574,7 @@
    "vnoska": "1/4",
    "suma": "1062.43",
    "suma_client": "1062.43",
-   "profit": "229.15156862745107",
+   "profit": "229.151569",
    "commission": "0.22",
    "month": "Юли"
   },
@@ -3577,7 +3588,7 @@
    "vnoska": "1/1",
    "suma": "188.45",
    "suma_client": "188.45",
-   "profit": "22.190988235294128",
+   "profit": "22.190988",
    "commission": "0.12",
    "month": "Юли"
   },
@@ -3591,7 +3602,7 @@
    "vnoska": "1/1",
    "suma": "8057",
    "suma_client": "8057",
-   "profit": "1737.7843137254904",
+   "profit": "1737.784314",
    "commission": "0.22",
    "month": "Юли"
   },
@@ -3605,7 +3616,7 @@
    "vnoska": "1/1",
    "suma": "449.81",
    "suma_client": "449.81",
-   "profit": "52.93922352941178",
+   "profit": "52.939224",
    "commission": "0.12",
    "month": "Юли"
   },
@@ -3619,7 +3630,7 @@
    "vnoska": "1/4",
    "suma": "81.28",
    "suma_client": "81.28",
-   "profit": "17.530980392156863",
+   "profit": "17.53098",
    "commission": "0.22",
    "month": "Юли"
   },
@@ -3633,7 +3644,7 @@
    "vnoska": "1/1",
    "suma": "169.03",
    "suma_client": "169.03",
-   "profit": "19.90628235294119",
+   "profit": "19.906282",
    "commission": "0.12",
    "month": "Юли"
   },
@@ -3647,7 +3658,7 @@
    "vnoska": "3/4",
    "suma": "204.07",
    "suma_client": "204.07",
-   "profit": "44.01509803921567",
+   "profit": "88.030196",
    "commission": "0.22",
    "month": "Юли"
   },
@@ -3661,7 +3672,7 @@
    "vnoska": "3/4",
    "suma": "765",
    "suma_client": "765",
-   "profit": "165",
+   "profit": "165.0",
    "commission": "0.22",
    "month": "Юли"
   },
@@ -3675,7 +3686,7 @@
    "vnoska": "",
    "suma": "",
    "suma_client": "",
-   "profit": "",
+   "profit": "0.0",
    "commission": "",
    "month": "Юли"
   },
@@ -3689,7 +3700,7 @@
    "vnoska": "4/4",
    "suma": "782.28",
    "suma_client": "613.5529411764705",
-   "profit": "0",
+   "profit": "0.0",
    "commission": "0.22",
    "month": "Юли"
   },
@@ -3703,7 +3714,7 @@
    "vnoska": "0.25",
    "suma": "204.65",
    "suma_client": "204.65",
-   "profit": "44.14019607843139",
+   "profit": "44.140196",
    "commission": "0.22",
    "month": "Юли"
   },
@@ -3717,7 +3728,7 @@
    "vnoska": "1/1",
    "suma": "",
    "suma_client": "0",
-   "profit": "0",
+   "profit": "0.0",
    "commission": "0.22",
    "month": "Юли"
   },
@@ -3731,7 +3742,7 @@
    "vnoska": "1/1",
    "suma": "155.79",
    "suma_client": "155.79",
-   "profit": "18.348235294117643",
+   "profit": "18.348235",
    "commission": "0.12",
    "month": "Юли"
   },
@@ -3745,7 +3756,7 @@
    "vnoska": "1/1",
    "suma": "1135.44",
    "suma_client": "1024.1223529411766",
-   "profit": "133.58117647058828",
+   "profit": "133.581176",
    "commission": "0.22",
    "month": "Юли"
   },
@@ -3759,7 +3770,7 @@
    "vnoska": "1/1",
    "suma": "204.8",
    "suma_client": "204.8",
-   "profit": "24.114117647058833",
+   "profit": "24.114118",
    "commission": "0.12",
    "month": "Септември"
   },
@@ -3773,7 +3784,7 @@
    "vnoska": "1/1",
    "suma": "",
    "suma_client": "0",
-   "profit": "0.019999999999999997",
+   "profit": "0.02",
    "commission": "0.12",
    "month": "Септември"
   },
@@ -3787,7 +3798,7 @@
    "vnoska": "1/4",
    "suma": "423.3",
    "suma_client": "402.55",
-   "profit": "70.55000000000001",
+   "profit": "70.55",
    "commission": "0.22",
    "month": "Септември"
   },
@@ -3815,7 +3826,7 @@
    "vnoska": "1/1",
    "suma": "230.47",
    "suma_client": "230.47",
-   "profit": "27.134117647058815",
+   "profit": "27.134118",
    "commission": "0.12",
    "month": "Септември"
   },
@@ -3829,7 +3840,7 @@
    "vnoska": "1/4",
    "suma": "604.74",
    "suma_client": "557.3094117647059",
-   "profit": "83.00352941176476",
+   "profit": "83.003529",
    "commission": "0.22",
    "month": "Септември"
   },
@@ -3843,7 +3854,7 @@
    "vnoska": "1/1",
    "suma": "188.45",
    "suma_client": "188.45",
-   "profit": "22.190588235294115",
+   "profit": "22.190588",
    "commission": "0.12",
    "month": "Септември"
   },
@@ -3857,7 +3868,7 @@
    "vnoska": "1/1",
    "suma": "170.74",
    "suma_client": "170.74",
-   "profit": "20.1070588235294",
+   "profit": "20.107059",
    "commission": "0.12",
    "month": "Септември"
   },
@@ -3871,7 +3882,7 @@
    "vnoska": "1/1",
    "suma": "1749.81",
    "suma_client": "1600.5615",
-   "profit": "228.16150000000016",
+   "profit": "228.1615",
    "commission": "0.22",
    "month": "Септември"
   },
@@ -3880,13 +3891,13 @@
    "clientId": "c63",
    "carId": "car98",
    "type": "ГО",
-   "polica": "BG/",
-   "endDate": "2026-09-29",
+   "polica": "BG/33/126003373553",
+   "endDate": "2027-09-29",
    "vnoska": "1/1",
-   "suma": "",
-   "suma_client": "",
-   "profit": "",
-   "commission": "",
+   "suma": "230.47",
+   "suma_client": "230.47",
+   "profit": "27.134118",
+   "commission": "0.12",
    "month": "Септември"
   },
   {
@@ -3899,7 +3910,7 @@
    "vnoska": "",
    "suma": "",
    "suma_client": "",
-   "profit": "",
+   "profit": "0.0",
    "commission": "",
    "month": "Септември"
   },
@@ -3908,40 +3919,40 @@
    "clientId": "c18",
    "carId": "car73",
    "type": "ГО",
-   "polica": "BG/",
-   "endDate": "2026-10-06",
-   "vnoska": "",
-   "suma": "",
-   "suma_client": "",
-   "profit": "",
-   "commission": "",
+   "polica": "BG/33/126003440893",
+   "endDate": "2027-10-06",
+   "vnoska": "1/1",
+   "suma": "215.15",
+   "suma_client": "215.15",
+   "profit": "25.332165",
+   "commission": "0.12",
    "month": "Септември"
   },
   {
    "id": "p163",
-   "clientId": "c65",
+   "clientId": "c63",
    "carId": "car98",
-   "type": "",
-   "polica": "",
-   "endDate": "2026-10-02",
+   "type": "КАСКО",
+   "polica": "1012610011561",
+   "endDate": "2027-10-01",
    "vnoska": "1/1",
-   "suma": "",
-   "suma_client": "",
-   "profit": "",
-   "commission": "",
+   "suma": "4855.2",
+   "suma_client": "4450.599999999999",
+   "profit": "642.6",
+   "commission": "0.22",
    "month": "Септември"
   },
   {
    "id": "p164",
    "clientId": "c10",
    "carId": "car10",
-   "type": "ГО",
-   "polica": "BG/",
+   "type": "",
+   "polica": "",
    "endDate": "2026-10-01",
    "vnoska": "1/1",
    "suma": "",
-   "suma_client": "",
-   "profit": "",
+   "suma_client": "0",
+   "profit": "0.0",
    "commission": "",
    "month": "Септември"
   },
@@ -3950,13 +3961,13 @@
    "clientId": "c7",
    "carId": "car100",
    "type": "ГО",
-   "polica": "BG/",
-   "endDate": "2026-10-07",
+   "polica": "BG/33/126003461447",
+   "endDate": "2027-10-07",
    "vnoska": "1/1",
-   "suma": "",
-   "suma_client": "",
-   "profit": "",
-   "commission": "",
+   "suma": "230.48",
+   "suma_client": "230.48",
+   "profit": "27.135694",
+   "commission": "0.12",
    "month": "Септември"
   },
   {
@@ -3968,97 +3979,111 @@
    "endDate": "2026-10-11",
    "vnoska": "",
    "suma": "",
-   "suma_client": "",
-   "profit": "",
-   "commission": "",
+   "suma_client": "0",
+   "profit": "0.0204",
+   "commission": "0.12",
    "month": "Септември"
   },
   {
    "id": "p167",
-   "clientId": "c7",
+   "clientId": "c65",
    "carId": "car101",
-   "type": "",
-   "polica": "",
-   "endDate": "2026-10-17",
-   "vnoska": "1/1",
-   "suma": "",
-   "suma_client": "",
-   "profit": "",
-   "commission": "",
+   "type": "КАСКО",
+   "polica": "1012610012244",
+   "endDate": "2027-10-13",
+   "vnoska": "1/4",
+   "suma": "162.79",
+   "suma_client": "138.85029411764705",
+   "profit": "11.171863",
+   "commission": "0.22",
    "month": "Септември"
   },
   {
    "id": "p168",
    "clientId": "c7",
-   "carId": "car101",
-   "type": "ГО",
-   "polica": "BG/",
-   "endDate": "2026-10-17",
+   "carId": "car102",
+   "type": "КАСКО",
+   "polica": "1012610012342",
+   "endDate": "2027-10-17",
    "vnoska": "1/1",
-   "suma": "",
-   "suma_client": "",
-   "profit": "",
-   "commission": "",
+   "suma": "435.66",
+   "suma_client": "435.66",
+   "profit": "93.965882",
+   "commission": "0.22",
    "month": "Септември"
   },
   {
    "id": "p169",
-   "clientId": "c67",
+   "clientId": "c7",
    "carId": "car102",
-   "type": "",
-   "polica": "",
-   "endDate": "2026-10-19",
+   "type": "ГО",
+   "polica": "BG/33/126003575280",
+   "endDate": "2027-10-17",
    "vnoska": "1/1",
-   "suma": "",
-   "suma_client": "",
-   "profit": "",
-   "commission": "",
+   "suma": "188.45",
+   "suma_client": "188.45",
+   "profit": "22.190988",
+   "commission": "0.12",
    "month": "Септември"
   },
   {
    "id": "p170",
    "clientId": "c67",
-   "carId": "car102",
+   "carId": "car103",
+   "type": "",
+   "polica": "",
+   "endDate": "2026-10-19",
+   "vnoska": "1/1",
+   "suma": "",
+   "suma_client": "0",
+   "profit": "0.0",
+   "commission": "0.22",
+   "month": "Септември"
+  },
+  {
+   "id": "p171",
+   "clientId": "c67",
+   "carId": "car103",
    "type": "ГО",
    "polica": "BG/",
    "endDate": "2025-10-19",
    "vnoska": "1/1",
    "suma": "",
-   "suma_client": "",
-   "profit": "",
-   "commission": "",
-   "month": "Септември"
-  },
-  {
-   "id": "p171",
-   "clientId": "c68",
-   "carId": "car103",
-   "type": "ГО",
-   "polica": "BG/",
-   "endDate": "2026-10-21",
-   "vnoska": "1/1",
-   "suma": "",
-   "suma_client": "",
-   "profit": "",
-   "commission": "",
+   "suma_client": "0",
+   "profit": "0.02",
+   "commission": "0.12",
    "month": "Септември"
   },
   {
    "id": "p172",
    "clientId": "c68",
-   "carId": "car103",
-   "type": "КАСКО",
-   "polica": "1012510004820",
-   "endDate": "2026-10-23",
+   "carId": "car104",
+   "type": "ГО",
+   "polica": "BG/33/126003577202",
+   "endDate": "2027-10-21",
    "vnoska": "1/1",
-   "suma": "",
-   "suma_client": "",
-   "profit": "",
-   "commission": "",
+   "suma": "188.45",
+   "suma_client": "188.45",
+   "profit": "22.190588",
+   "commission": "0.12",
    "month": "Септември"
   },
   {
    "id": "p173",
+   "clientId": "c68",
+   "carId": "car104",
+   "type": "КАСКО",
+   "polica": "1012610012347",
+   "endDate": "2027-10-22",
+   "vnoska": "1/1",
+   "suma": "1509.6",
+   "suma_client": "1406",
+   "profit": "222.0",
+   "commission": "0.22",
+   "month": "Септември"
+  },
+  {
+   "id": "p174",
    "clientId": "c7",
    "carId": "car88",
    "type": "КАСКО",
@@ -4067,91 +4092,91 @@
    "vnoska": "1/4",
    "suma": "1007.1",
    "suma_client": "1007.1",
-   "profit": "217.21764705882356",
+   "profit": "217.217647",
    "commission": "0.22",
    "month": "Септември"
   },
   {
-   "id": "p174",
+   "id": "p175",
    "clientId": "c70",
-   "carId": "car104",
+   "carId": "car105",
    "type": "",
    "polica": "",
    "endDate": "2026-10-25",
    "vnoska": "",
    "suma": "",
-   "suma_client": "",
-   "profit": "",
-   "commission": "",
+   "suma_client": "0",
+   "profit": "0.0",
+   "commission": "0.22",
    "month": "Септември"
   },
   {
-   "id": "p175",
+   "id": "p176",
    "clientId": "c3",
-   "carId": "car105",
+   "carId": "car106",
    "type": "ГО",
    "polica": "BG/",
    "endDate": "2026-10-28",
    "vnoska": "1/1",
    "suma": "",
-   "suma_client": "",
-   "profit": "",
-   "commission": "",
-   "month": "Септември"
-  },
-  {
-   "id": "p176",
-   "clientId": "c23",
-   "carId": "car106",
-   "type": "КАСКО",
-   "polica": "1012510012655",
-   "endDate": "2026-10-30",
-   "vnoska": "1/1",
-   "suma": "",
-   "suma_client": "",
-   "profit": "",
-   "commission": "",
+   "suma_client": "0",
+   "profit": "0.02",
+   "commission": "0.12",
    "month": "Септември"
   },
   {
    "id": "p177",
    "clientId": "c23",
-   "carId": "car106",
+   "carId": "car107",
+   "type": "КАСКО",
+   "polica": "1012510012655",
+   "endDate": "2026-10-30",
+   "vnoska": "1/1",
+   "suma": "",
+   "suma_client": "0",
+   "profit": "0.0",
+   "commission": "0.22",
+   "month": "Септември"
+  },
+  {
+   "id": "p178",
+   "clientId": "c23",
+   "carId": "car107",
    "type": "ГО",
    "polica": "BG/33/125003573503",
    "endDate": "2026-10-29",
    "vnoska": "1/1",
    "suma": "",
-   "suma_client": "",
-   "profit": "",
-   "commission": "",
+   "suma_client": "0",
+   "profit": "0.02",
+   "commission": "0.12",
    "month": "Септември"
   },
   {
-   "id": "p178",
+   "id": "p179",
    "clientId": "c68",
-   "carId": "car107",
+   "carId": "car108",
    "type": "",
    "polica": "",
    "endDate": "",
    "vnoska": "",
    "suma": "LevIns",
    "suma_client": "",
-   "profit": "",
+   "profit": "0.0",
    "commission": "",
    "month": "Декември"
   },
   {
-   "id": "p179",
+   "id": "p180",
    "clientId": "c71",
-   "carId": "car108",
+   "carId": "car109",
    "type": "",
    "polica": "",
    "endDate": "",
    "vnoska": "",
    "suma": "",
    "suma_client": "",
-   "profit": "",
+   "profit": "0.0",
    "commission": "",
    "month": "Декември"
   }
@@ -6511,6 +6536,54 @@
   },
   {
    "id": "i196",
+   "policyId": "p212",
+   "clientId": "c65",
+   "carId": "car101",
+   "type": "Вноска",
+   "no": 1,
+   "of": 4,
+   "date": "2026-10-13",
+   "note": "",
+   "amount": "138.85029411764705"
+  },
+  {
+   "id": "i197",
+   "policyId": "p212",
+   "clientId": "c65",
+   "carId": "car101",
+   "type": "Вноска",
+   "no": 2,
+   "of": 4,
+   "date": "2027-01-13",
+   "note": "",
+   "amount": "138.85029411764705"
+  },
+  {
+   "id": "i198",
+   "policyId": "p212",
+   "clientId": "c65",
+   "carId": "car101",
+   "type": "Вноска",
+   "no": 3,
+   "of": 4,
+   "date": "2027-04-13",
+   "note": "",
+   "amount": "138.85029411764705"
+  },
+  {
+   "id": "i199",
+   "policyId": "p212",
+   "clientId": "c65",
+   "carId": "car101",
+   "type": "Вноска",
+   "no": 4,
+   "of": 4,
+   "date": "2027-07-13",
+   "note": "",
+   "amount": "138.85029411764705"
+  },
+  {
+   "id": "i200",
    "policyId": "p225",
    "clientId": "c7",
    "carId": "car88",
@@ -6522,7 +6595,7 @@
    "amount": "1007.1"
   },
   {
-   "id": "i197",
+   "id": "i201",
    "policyId": "p225",
    "clientId": "c7",
    "carId": "car88",
@@ -6534,7 +6607,7 @@
    "amount": "1007.1"
   },
   {
-   "id": "i198",
+   "id": "i202",
    "policyId": "p225",
    "clientId": "c7",
    "carId": "car88",
@@ -6546,7 +6619,7 @@
    "amount": "1007.1"
   },
   {
-   "id": "i199",
+   "id": "i203",
    "policyId": "p225",
    "clientId": "c7",
    "carId": "car88",

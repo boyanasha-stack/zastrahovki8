@@ -110,21 +110,37 @@ def gen_installments(polica_id, enddate, vnoska):
 
 def dedup_policies(policies):
     """Премахва дублирани полици по (кола + крайна дата + тип),
-    като запазва записа с най-много информация (номер на полица/вноска)."""
+    като запазва записа с най-много информация (номер на полица/вноска).
+    ВАЖНО: печалбата на дублираните редове се СЪБИРА (всеки ред = реална печалба),
+    за да съвпадат месечните суми с колона N („Печалба") в Excel."""
     best = {}
     order = []
     for p in policies:
         key = (p.get('carId'), p.get('endDate'), p.get('type'))
         score = (1 if p.get('polica') else 0) + (1 if p.get('vnoska') else 0) + (1 if p.get('suma_client') else 0)
         if key not in best:
+            p['_profit_sum'] = num_or0(p.get('profit'))
             best[key] = (score, p); order.append(key)
         else:
+            p['_profit_sum'] = num_or0(p.get('profit'))
+            acc = best[key][1].get('_profit_sum', 0) + p['_profit_sum']
             if score > best[key][0]:
                 best[key] = (score, p)
+            best[key][1]['_profit_sum'] = acc
     out = [best[k][1] for k in order]
+    for p in out:
+        if '_profit_sum' in p:
+            p['profit'] = str(round(p.pop('_profit_sum'), 6))
     for i, p in enumerate(out):
         p['id'] = 'p' + str(i)
     return out
+
+
+def num_or0(x):
+    try:
+        return float(str(x).replace(',', '.'))
+    except Exception:
+        return 0.0
 
 def dedup_events(events):
     """Премахва дублирани вноски: едно събитие за (кола + тип + номер вноска + падеж)."""
