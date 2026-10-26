@@ -398,36 +398,30 @@
   },
   {
    "id": "c66",
-   "name": "Ralitsa",
+   "name": "Gele",
    "phone": "",
    "notes": ""
   },
   {
    "id": "c67",
-   "name": "Tate",
+   "name": "Ralitsa",
    "phone": "",
    "notes": ""
   },
   {
    "id": "c68",
-   "name": "Plamen Tonev",
+   "name": "Tate",
    "phone": "",
    "notes": ""
   },
   {
    "id": "c69",
-   "name": "Jorkata Djaga",
+   "name": "Plamen Tonev",
    "phone": "",
    "notes": ""
   },
   {
    "id": "c70",
-   "name": "Nasko bmw",
-   "phone": "",
-   "notes": ""
-  },
-  {
-   "id": "c71",
    "name": "Kalin Milev Cupra2",
    "phone": "",
    "notes": ""
@@ -1558,6 +1552,17 @@
   },
   {
    "id": "car102",
+   "clientId": "c66",
+   "make": "VW",
+   "model": "Arteon",
+   "year": "",
+   "plate": "CB0883PT",
+   "vin": "",
+   "notes": "",
+   "address": ""
+  },
+  {
+   "id": "car103",
    "clientId": "c7",
    "make": "Fiat",
    "model": "500 X",
@@ -1568,8 +1573,8 @@
    "address": ""
   },
   {
-   "id": "car103",
-   "clientId": "c67",
+   "id": "car104",
+   "clientId": "c68",
    "make": "Skoda",
    "model": "Superb",
    "year": "",
@@ -1579,8 +1584,8 @@
    "address": ""
   },
   {
-   "id": "car104",
-   "clientId": "c68",
+   "id": "car105",
+   "clientId": "c69",
    "make": "Cupra",
    "model": "Formentor",
    "year": "",
@@ -1590,41 +1595,8 @@
    "address": ""
   },
   {
-   "id": "car105",
-   "clientId": "c70",
-   "make": "BMW",
-   "model": "GT",
-   "year": "",
-   "plate": "CB9598AB",
-   "vin": "",
-   "notes": "",
-   "address": ""
-  },
-  {
    "id": "car106",
-   "clientId": "c3",
-   "make": "Iveco",
-   "model": "",
-   "year": "",
-   "plate": "CB7377XO",
-   "vin": "",
-   "notes": "",
-   "address": ""
-  },
-  {
-   "id": "car107",
-   "clientId": "c23",
-   "make": "BMW",
-   "model": "M3",
-   "year": "",
-   "plate": "CB6870CA",
-   "vin": "",
-   "notes": "",
-   "address": ""
-  },
-  {
-   "id": "car108",
-   "clientId": "c68",
+   "clientId": "c69",
    "make": "SQ7",
    "model": "",
    "year": "",
@@ -1634,8 +1606,8 @@
    "address": ""
   },
   {
-   "id": "car109",
-   "clientId": "c71",
+   "id": "car107",
+   "clientId": "c70",
    "make": "Cupra",
    "model": "2",
    "year": "",
@@ -2902,7 +2874,7 @@
    "vnoska": "1/4",
    "suma": "186.75",
    "suma_client": "186.75",
-   "profit": "120.838235",
+   "profit": "80.558824",
    "commission": "0.22",
    "month": "Април"
   },
@@ -3657,8 +3629,8 @@
    "endDate": "2026-01-31",
    "vnoska": "3/4",
    "suma": "204.07",
-   "suma_client": "204.07",
-   "profit": "88.030196",
+   "suma_client": "108.73",
+   "profit": "-27.873333",
    "commission": "0.22",
    "month": "Юли"
   },
@@ -4000,8 +3972,22 @@
   },
   {
    "id": "p168",
-   "clientId": "c7",
+   "clientId": "c66",
    "carId": "car102",
+   "type": "ГО",
+   "polica": "BG/33/126003576512",
+   "endDate": "2027-10-15",
+   "vnoska": "1/1",
+   "suma": "188.45",
+   "suma_client": "188.45",
+   "profit": "22.190988",
+   "commission": "0.12",
+   "month": "Септември"
+  },
+  {
+   "id": "p169",
+   "clientId": "c7",
+   "carId": "car103",
    "type": "КАСКО",
    "polica": "1012610012342",
    "endDate": "2027-10-17",
@@ -4013,9 +3999,9 @@
    "month": "Септември"
   },
   {
-   "id": "p169",
+   "id": "p170",
    "clientId": "c7",
-   "carId": "car102",
+   "carId": "car103",
    "type": "ГО",
    "polica": "BG/33/126003575280",
    "endDate": "2027-10-17",
@@ -4027,26 +4013,26 @@
    "month": "Септември"
   },
   {
-   "id": "p170",
-   "clientId": "c67",
-   "carId": "car103",
-   "type": "",
-   "polica": "",
+   "id": "p171",
+   "clientId": "c68",
+   "carId": "car104",
+   "type": "КАСКО",
+   "polica": "1012610012415",
    "endDate": "2026-10-19",
    "vnoska": "1/1",
-   "suma": "",
-   "suma_client": "0",
-   "profit": "0.0",
+   "suma": "456.16",
+   "suma_client": "366.71686274509807",
+   "profit": "8.944314",
    "commission": "0.22",
    "month": "Септември"
   },
   {
-   "id": "p171",
-   "clientId": "c67",
-   "carId": "car103",
+   "id": "p172",
+   "clientId": "c68",
+   "carId": "car104",
    "type": "ГО",
    "polica": "BG/",
-   "endDate": "2025-10-19",
+   "endDate": "2026-10-19",
    "vnoska": "1/1",
    "suma": "",
    "suma_client": "0",
@@ -4055,9 +4041,9 @@
    "month": "Септември"
   },
   {
-   "id": "p172",
-   "clientId": "c68",
-   "carId": "car104",
+   "id": "p173",
+   "clientId": "c69",
+   "carId": "car105",
    "type": "ГО",
    "polica": "BG/33/126003577202",
    "endDate": "2027-10-21",
@@ -4069,9 +4055,9 @@
    "month": "Септември"
   },
   {
-   "id": "p173",
-   "clientId": "c68",
-   "carId": "car104",
+   "id": "p174",
+   "clientId": "c69",
+   "carId": "car105",
    "type": "КАСКО",
    "polica": "1012610012347",
    "endDate": "2027-10-22",
@@ -4083,7 +4069,7 @@
    "month": "Септември"
   },
   {
-   "id": "p174",
+   "id": "p175",
    "clientId": "c7",
    "carId": "car88",
    "type": "КАСКО",
@@ -4097,65 +4083,9 @@
    "month": "Септември"
   },
   {
-   "id": "p175",
-   "clientId": "c70",
-   "carId": "car105",
-   "type": "",
-   "polica": "",
-   "endDate": "2026-10-25",
-   "vnoska": "",
-   "suma": "",
-   "suma_client": "0",
-   "profit": "0.0",
-   "commission": "0.22",
-   "month": "Септември"
-  },
-  {
    "id": "p176",
-   "clientId": "c3",
+   "clientId": "c69",
    "carId": "car106",
-   "type": "ГО",
-   "polica": "BG/",
-   "endDate": "2026-10-28",
-   "vnoska": "1/1",
-   "suma": "",
-   "suma_client": "0",
-   "profit": "0.02",
-   "commission": "0.12",
-   "month": "Септември"
-  },
-  {
-   "id": "p177",
-   "clientId": "c23",
-   "carId": "car107",
-   "type": "КАСКО",
-   "polica": "1012510012655",
-   "endDate": "2026-10-30",
-   "vnoska": "1/1",
-   "suma": "",
-   "suma_client": "0",
-   "profit": "0.0",
-   "commission": "0.22",
-   "month": "Септември"
-  },
-  {
-   "id": "p178",
-   "clientId": "c23",
-   "carId": "car107",
-   "type": "ГО",
-   "polica": "BG/33/125003573503",
-   "endDate": "2026-10-29",
-   "vnoska": "1/1",
-   "suma": "",
-   "suma_client": "0",
-   "profit": "0.02",
-   "commission": "0.12",
-   "month": "Септември"
-  },
-  {
-   "id": "p179",
-   "clientId": "c68",
-   "carId": "car108",
    "type": "",
    "polica": "",
    "endDate": "",
@@ -4167,9 +4097,9 @@
    "month": "Декември"
   },
   {
-   "id": "p180",
-   "clientId": "c71",
-   "carId": "car109",
+   "id": "p177",
+   "clientId": "c70",
+   "carId": "car107",
    "type": "",
    "polica": "",
    "endDate": "",
@@ -6304,7 +6234,7 @@
    "of": 4,
    "date": "2025-01-31",
    "note": "",
-   "amount": "204.07"
+   "amount": "108.73"
   },
   {
    "id": "i177",
@@ -6316,7 +6246,7 @@
    "of": 4,
    "date": "2025-04-30",
    "note": "",
-   "amount": "204.07"
+   "amount": "108.73"
   },
   {
    "id": "i178",
@@ -6328,7 +6258,7 @@
    "of": 4,
    "date": "2025-07-31",
    "note": "",
-   "amount": "204.07"
+   "amount": "108.73"
   },
   {
    "id": "i179",
@@ -6340,7 +6270,7 @@
    "of": 4,
    "date": "2025-10-31",
    "note": "",
-   "amount": "204.07"
+   "amount": "108.73"
   },
   {
    "id": "i180",

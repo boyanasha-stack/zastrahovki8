@@ -158,9 +158,26 @@ def dedup_events(events):
         e['id'] = 'i' + str(i)
     return out
 
+def pick_sheet(wb):
+    """Намира листа с полиците. Името може да е Sheet1/Застраховки/др. —
+    затова търсим листа, чийто първи ред съдържа 'Клиент' и 'Полица номер'."""
+    # 1) приоритет: лист, който има заглавен ред с Клиент + Полица
+    for name in wb.sheetnames:
+        ws = wb[name]
+        try:
+            head = [str(ws.cell(row=1, column=c).value or '') for c in range(1, 20)]
+        except Exception:
+            continue
+        h = ' | '.join(head)
+        if 'Клиент' in h and 'Полица' in h:
+            return ws
+    # 2) fallback: първият лист
+    return wb[wb.sheetnames[0]]
+
+
 def main():
     wb = load_workbook(EXCEL, data_only=True)
-    ws = wb['Sheet1']
+    ws = pick_sheet(wb)
 
     clients = {}   # name -> {id,name,phone,notes}
     cars = {}      # plate -> {id, clientId, make, model, year, plate, vin, notes, address}
