@@ -332,38 +332,45 @@ function renderToday(){
   $('main').innerHTML=html;
 }
 
-var MONTHS_BG=['януари','февруари','март','април','май','юни','юли','август','септември','октомври','ноември','декември'];
-function endMonth(p){
-  var s=String(p.endDate||''); if(s.length<7) return null;
-  return s.slice(0,4)+'-'+s.slice(5,7);
-}
-function monthLabel(m){
-  var y=parseInt(m.slice(0,4),10), mo=parseInt(m.slice(5,7),10);
-  return MONTHS_BG[mo-1]+' '+y;
-}
+var MONTH_ORDER=['Ноември','Октомври','Септември','Август','Юли','Юни','Май','Април','Март','Февруари','Януари','Декември'];
+var MONTH_NUM={'Януари':1,'Февруари':2,'Март':3,'Април':4,'Май':5,'Юни':6,'Юли':7,'Август':8,'Септември':9,'Октомври':10,'Ноември':11,'Декември':12};
+
 function renderFinance(){
-  var byMonth={}, total=0, cnt=0;
-  DATA.policies.forEach(function(p){
-    var m=endMonth(p), pr=num(p.profit);
-    total+=pr; cnt++;
-    if(m){ byMonth[m]=byMonth[m]||{sum:0,n:0}; byMonth[m].sum+=pr; byMonth[m].n++; }
-  });
-  var now=new Date(), dm=String(now.getFullYear())+'-'+('0'+(now.getMonth()+1)).slice(-2);
-  var html='<div class="section-title">💰 Финансов преглед</div>';
+  var F=DATA.finance||{byMonth:{},total:0,rows:0};
+  var by=F.byMonth||{};
+  var now=new Date();
+  var curName=['Януари','Февруари','Март','Април','Май','Юни','Юли','Август','Септември','Октомври','Ноември','Декември'][now.getMonth()];
+
+  var html='<div class="section-title">💰 Печалба за годината</div>';
   html+='<div class="kpi" style="margin-bottom:12px">'
-    +'<div><b>'+money(total)+'</b><span>Общо печалба</span></div>'
-    +'<div><b>'+cnt+'</b><span>полици</span></div></div>';
-  html+='<div class="section-title">По месеци (печалба)</div>';
-  if(!Object.keys(byMonth).length){ html+='<div class="empty">Няма данни.</div>'; $('main').innerHTML=html; return; }
-  var keys=Object.keys(byMonth).sort().reverse();   // от последния към първия
-  keys.forEach(function(m){
-    var past=m<dm, cur=m===dm;
-    var tag = cur?'<span class="badge ok">до момента</span>':(past?'<span class="badge">приключил</span>':'<span class="badge warn">бъдещ</span>');
-    html+='<div class="list-item" style="'+(cur?'border-color:var(--accent)':'')+'">'
-      +'<div class="name">'+monthLabel(m)+' '+tag+'</div>'
-      +'<div class="meta">💰 '+money(byMonth[m].sum)+' · '+byMonth[m].n+' '+(byMonth[m].n===1?'полица':'полици')+'</div>'
+      +'<div style="flex:1.6;"><b>'+money(F.total||0)+'</b><span>ОБЩО ЗА ГОДИНАТА</span></div>'
+      +'<div><b>'+(F.rows||0)+'</b><span>полици</span></div></div>';
+
+  // месеци: от текущия назад (Октомври → Януари → регистър за останалите)
+  var order=MONTH_ORDER.filter(function(m){ return by.hasOwnProperty(m); });
+  // добави всеки друг месец, който е в данните, но не е в списъка
+  Object.keys(by).forEach(function(m){ if(order.indexOf(m)===-1) order.push(m); });
+
+  html+='<div class="section-title">По месеци — от последния назад</div>';
+  var past=0, future=0;
+  order.forEach(function(m){
+    var sum=by[m]||0;
+    var isCur = (m===curName);
+    var isFuture = MONTH_NUM[m] > MONTH_NUM[curName];
+    if(isFuture) future+=sum; else past+=sum;
+    var tag = isCur?'<span class="badge ok">текущ</span>':(isFuture?'<span class="badge warn">предстои</span>':'<span class="badge">приключил</span>');
+    html+='<div class="list-item" style="'+(isCur?'border-color:var(--accent)':'')+'">'
+      +'<div class="name">'+esc(m)+' '+tag+'</div>'
+      +'<div class="meta" style="font-size:16px;color:var(--accent2);font-weight:700;">'+money(sum)+'</div>'
       +'</div>';
   });
+
+  if(!order.length){ html+='<div class="empty">Няма данни за печалба.</div>'; }
+  else {
+    html+='<div class="list-item" style="border-color:var(--gold);margin-top:10px;">'
+      +'<div class="name">До момента (Януари – '+esc(curName)+')</div>'
+      +'<div class="meta" style="font-size:16px;color:var(--gold);font-weight:700;">'+money(past)+'</div></div>';
+  }
   $('main').innerHTML=html;
 }
 

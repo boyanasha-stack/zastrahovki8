@@ -19,6 +19,23 @@ OUT = os.path.expanduser('~/zastrahovki-app/data.json')
 MONTHS = ['януари','февруари','март','април','май','юни','юли','август',
           'септември','октомври','ноември','декември']
 
+# За разпознаване на месечни редове: нормализираме латиница↔кирилица,
+# защото в Excel често има 'Oктомври' (латинско O) вместо 'Октомври'.
+_LOOKALIKE = str.maketrans({
+    'A':'А','B':'В','C':'С','E':'Е','H':'Н','K':'К','M':'М','O':'О','P':'Р',
+    'T':'Т','X':'Х','Y':'У','a':'а','c':'с','e':'е','o':'о','p':'р','x':'х','y':'у',
+    'O':'О', '0':'О',
+})
+
+def norm_month(s):
+    """Връща канонично име на месец или None."""
+    if not isinstance(s, str): return None
+    t = s.strip().translate(_LOOKALIKE).lower().replace(' ', '')
+    for m in MONTHS:
+        if t == m:
+            return m.capitalize()
+    return None
+
 def translit(s):
     TR = {'а':'a','б':'b','в':'v','г':'g','д':'d','е':'e','ж':'zh','з':'z','и':'i','й':'y',
           'к':'k','л':'l','м':'m','н':'n','о':'o','п':'p','р':'r','с':'s','т':'t','у':'u',
@@ -34,7 +51,7 @@ def clean_name(s):
     n = str(s).strip()
     if not n: return None
     low = n.lower()
-    if low in MONTHS or low in ('имущество','оръжия'):
+    if norm_month(n) or low in ('имущество','оръжия'):
         return None
     # махни ГО/GO суфикс
     parts = n.split()
@@ -183,6 +200,7 @@ def main():
     cars = {}      # plate -> {id, clientId, make, model, year, plate, vin, notes, address}
     policies = []
     events = []
+    finance = []   # ЗА ФИНАНСИТЕ: всеки ред с печалба, БЕЗ дедупликация
     cseq = 0; carseq = 0; pseq = 0
     month = None
 
@@ -192,8 +210,9 @@ def main():
         if name is None: continue
         name_s = str(name).strip()
         if not name_s: continue
-        if name_s.lower() in MONTHS:
-            month = name_s; continue
+        mo = norm_month(name_s)
+        if mo:
+            month = mo; continue
         cname = clean_name(name_s)
         if cname is None: continue
 
@@ -235,6 +254,12 @@ def main():
 
         ptype = 'ГО' if polno.startswith('BG/') else ('КАСКО' if polno else '')
         pid = 'p'+str(pseq)
+
+        # ЗА ФИНАНСИТЕ: всеки ред с числова печалба се брои (без дедуп) —
+        # така месечните суми съвпадат 1:1 с колона N в Excel.
+        if isinstance(v[13], (int, float)):
+            finance.append({'month': month or '', 'profit': float(v[13])})
+
         policies.append({
             'id':pid, 'clientId':cid, 'carId':carid, 'type':ptype,
             'polica':polno, 'endDate':endd or '', 'vnoska':vnoska,
@@ -254,16 +279,30 @@ def main():
     # дедупликирай полиците за досиетата (маха дублирани редове от Excel)
     policies = dedup_policies(policies)
 
+    # обобщена печалба по месеци — от СУРОВИТЕ редове (без дедуп), за да е точно колкото Excel
+    fin_by_month = {}
+    for f in finance:
+        m = f['month']
+        fin_by_month[m] = fin_by_month.get(m, 0.0) + f['profit']
+
     data = {
         'clients': list(clients.values()),
         'cars': list(cars.values()),
         'policies': policies,
-        'events': dedup_events(events)
+        'events': dedup_events(events),
+        'finance': {
+            'byMonth': {k: round(v, 2) for k, v in fin_by_month.items()},
+            'total': round(sum(fin_by_month.values()), 2),
+            'rows': len(finance)
+        }
     }
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     json.dump(data, open(OUT, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     print('data.json записан:', OUT)
     print('Клиенти:', len(data['clients']), '| Коли:', len(data['cars']), '| Полици:', len(data['policies']))
+    print('Печалба общо:', data['finance']['total'], '€ от', data['finance']['rows'], 'реда')
+    for m, s in sorted(fin_by_month.items(), key=lambda x: -x[1]):
+        print(f'   {m:<12} {s:>12.2f} €')
 
 if __name__ == '__main__':
     main()
