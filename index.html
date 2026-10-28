@@ -132,10 +132,13 @@ function rPaid(p){ return has('r_paid', rKey(p)); }
 function loader(){ return getData(); }
 
 /* Зареждане на данните — криптирани, паролата се помни („помни ме") */
+/* Зареждане на данните — без парола. Ключът е вграден в приложението,
+   така че данните остават криптирани в repo-то, но не се пита парола. */
+var APP_KEY='Money888';
 function loadData(){
   var saved=localStorage.getItem('zpass');
-  if(saved){ decryptAndLoad(saved); return; }
-  showPasswordScreen();
+  decryptAndLoad(saved||APP_KEY);
+  if(!saved) localStorage.setItem('zpass', APP_KEY);
 }
 
 function showPasswordScreen(){
@@ -173,8 +176,13 @@ function decryptAndLoad(pw){
     .catch(function(e){
       localStorage.removeItem('zpass');
       sessionStorage.removeItem('zpass');
-      showPasswordScreen();
-      var el=$('pwErr'); if(el) el.textContent='Грешна парола или проблем при зареждане';
+      // ако вградената парола не сработи — опитай веднъж с нея директно
+      if(pw!==APP_KEY){ decryptAndLoad(APP_KEY); return; }
+      $('main').innerHTML='<div class="empty" style="padding-top:40px;">'
+        +'<div style="font-size:40px;">⚠️</div>'
+        +'<div style="margin:14px 0;">Не мога да заредя данните.<br>Опитай да презаредиш страницата.</div>'
+        +'</div>'
+        +'<button class="btn btn-primary" onclick="location.reload()">Презареди</button>';
     });
 }
 
