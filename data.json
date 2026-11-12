@@ -7078,18 +7078,6 @@
   },
   {
    "id": "i216",
-   "policyId": "p237",
-   "clientId": "c24",
-   "carId": "car31",
-   "type": "Вноска",
-   "no": 2,
-   "of": 2,
-   "date": "2027-02-15",
-   "note": "",
-   "amount": "204.65"
-  },
-  {
-   "id": "i217",
    "policyId": "p246",
    "clientId": "c27",
    "carId": "car34",
@@ -7101,7 +7089,7 @@
    "amount": "0"
   },
   {
-   "id": "i218",
+   "id": "i217",
    "policyId": "p246",
    "clientId": "c27",
    "carId": "car34",
@@ -7113,7 +7101,7 @@
    "amount": "0"
   },
   {
-   "id": "i219",
+   "id": "i218",
    "policyId": "p246",
    "clientId": "c27",
    "carId": "car34",
@@ -7125,7 +7113,7 @@
    "amount": "0"
   },
   {
-   "id": "i220",
+   "id": "i219",
    "policyId": "p246",
    "clientId": "c27",
    "carId": "car34",
