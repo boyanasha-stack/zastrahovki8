@@ -305,9 +305,11 @@ function renderScheduled(){
     var urg = d<=7?'<span class="badge danger">Време е</span>':(d<=15?'<span class="badge warn">Контакт</span>':(d<=30?'<span class="badge warn">Подновяване</span>':''));
     var typ, pill, acts, click;
     if(x.kind==='renewal'){
-      typ='<span class="badge '+(x.type==='ГО'?'go':'kasko')+'">'+x.type+'</span>';
+      typ = x.p.watchOnly
+        ? '<span class="badge" style="background:rgba(154,163,181,.18);color:var(--muted);">👁 следя</span>'
+        : '<span class="badge '+(x.type==='ГО'?'go':'kasko')+'">'+x.type+'</span>';
       pill = rPaid(x.p)?'<span class="badge ok">✅ Платена</span>':(rRenew(x.p)?'<span class="badge blue">🔄 Подновена</span>':'');
-      acts = actionBtns('r', rKey(x.p), rRenew(x.p), rPaid(x.p));
+      acts = x.p.watchOnly ? '' : actionBtns('r', rKey(x.p), rRenew(x.p), rPaid(x.p));
       click="openCar('"+x.p.carId+"')";
     } else {
       typ='';
@@ -499,10 +501,12 @@ function openCar(id){
   var polHtml=pols.length?pols.map(function(p){
     var st=policyStatus(p);
     var pill = rPaid(p)?'<span class="badge ok">✅ Платена</span>':(rRenew(p)?'<span class="badge blue">🔄 Подновена</span>':'');
-    return '<div class="list-item"><div class="name">'+(isGo(p)?'ГО':'КАСКО')+(p.polica?' · '+esc(p.polica):'')
-      +' <span class="badge '+st.cls+'">'+st.label+'</span>'+pill+'</div>'
+    var watch = p.watchOnly?'<span class="badge" style="background:rgba(154,163,181,.18);color:var(--muted);">👁 следя · не е наша</span>':'';
+    var title = p.watchOnly ? '👁 Кола на клиента' : (isGo(p)?'ГО':'КАСКО');
+    return '<div class="list-item"><div class="name">'+title+(p.polica?' · '+esc(p.polica):'')
+      +' <span class="badge '+st.cls+'">'+st.label+'</span>'+pill+watch+'</div>'
       +'<div class="meta">Изтича: '+fmtDate(p.endDate)+(p.suma_client?' · 💰 '+money(p.suma_client):'')+'</div>'
-      +actionBtns('r', rKey(p), rRenew(p), rPaid(p), car.id)+'</div>';
+      +(p.watchOnly?'':actionBtns('r', rKey(p), rRenew(p), rPaid(p), car.id))+'</div>';
   }).join(''):'<div class="empty">Няма полици.</div>';
   showModal('<button class="close-x" onclick="closeModal()">&times;</button>'
     +'<h2>🚗 '+esc((car.make||'')+' '+(car.model||''))+' <span style="color:var(--gold);font-weight:700;">'+esc(car.plate||'')+'</span></h2>'

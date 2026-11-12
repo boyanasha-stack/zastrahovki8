@@ -1736,7 +1736,8 @@
    "suma_client": "2148.85",
    "profit": "463.477451",
    "commission": "0.22",
-   "month": "Януари"
+   "month": "Януари",
+   "watchOnly": false
   },
   {
    "id": "p1",
@@ -1750,7 +1751,8 @@
    "suma_client": "3054.49",
    "profit": "658.811569",
    "commission": "0.22",
-   "month": "Януари"
+   "month": "Януари",
+   "watchOnly": false
   },
   {
    "id": "p2",
@@ -1764,7 +1766,8 @@
    "suma_client": "230.47",
    "profit": "27.134518",
    "commission": "0.12",
-   "month": "Януари"
+   "month": "Януари",
+   "watchOnly": false
   },
   {
    "id": "p3",
@@ -1778,7 +1781,8 @@
    "suma_client": "89.51",
    "profit": "77.224314",
    "commission": "0.22",
-   "month": "Януари"
+   "month": "Януари",
+   "watchOnly": false
   },
   {
    "id": "p4",
@@ -1792,7 +1796,8 @@
    "suma_client": "",
    "profit": "0.0",
    "commission": "",
-   "month": "Януари"
+   "month": "Януари",
+   "watchOnly": true
   },
   {
    "id": "p5",
@@ -1806,7 +1811,8 @@
    "suma_client": "229.31",
    "profit": "49.45902",
    "commission": "0.22",
-   "month": "Януари"
+   "month": "Януари",
+   "watchOnly": false
   },
   {
    "id": "p6",
@@ -1820,7 +1826,8 @@
    "suma_client": "581",
    "profit": "125.313725",
    "commission": "0.22",
-   "month": "Януари"
+   "month": "Януари",
+   "watchOnly": false
   },
   {
    "id": "p7",
@@ -1834,7 +1841,8 @@
    "suma_client": "",
    "profit": "0.0",
    "commission": "",
-   "month": "Януари"
+   "month": "Януари",
+   "watchOnly": false
   },
   {
    "id": "p8",
@@ -1848,7 +1856,8 @@
    "suma_client": "728.64",
    "profit": "95.04",
    "commission": "0.22",
-   "month": "Януари"
+   "month": "Януари",
+   "watchOnly": false
   },
   {
    "id": "p9",
@@ -1862,7 +1871,8 @@
    "suma_client": "0",
    "profit": "0.0",
    "commission": "0.22",
-   "month": "Януари"
+   "month": "Януари",
+   "watchOnly": false
   },
   {
    "id": "p10",
@@ -1876,7 +1886,8 @@
    "suma_client": "393.67",
    "profit": "84.909216",
    "commission": "0.22",
-   "month": "Януари"
+   "month": "Януари",
+   "watchOnly": false
   },
   {
    "id": "p11",
@@ -1890,7 +1901,8 @@
    "suma_client": "224.24",
    "profit": "198.465882",
    "commission": "0.22",
-   "month": "Януари"
+   "month": "Януари",
+   "watchOnly": false
   },
   {
    "id": "p12",
@@ -1904,7 +1916,8 @@
    "suma_client": "205.1",
    "profit": "44.237255",
    "commission": "0.22",
-   "month": "Януари"
+   "month": "Януари",
+   "watchOnly": false
   },
   {
    "id": "p13",
@@ -1918,7 +1931,8 @@
    "suma_client": "310.4549019607843",
    "profit": "40.494118",
    "commission": "0.22",
-   "month": "Януари"
+   "month": "Януари",
+   "watchOnly": false
   },
   {
    "id": "p14",
@@ -1932,7 +1946,8 @@
    "suma_client": "519.0603921568628",
    "profit": "67.703529",
    "commission": "0.22",
-   "month": "Януари"
+   "month": "Януари",
+   "watchOnly": false
   },
   {
    "id": "p15",
@@ -1946,7 +1961,8 @@
    "suma_client": "320.68",
    "profit": "69.166275",
    "commission": "0.22",
-   "month": "Януари"
+   "month": "Януари",
+   "watchOnly": false
   },
   {
    "id": "p16",
@@ -1960,7 +1976,8 @@
    "suma_client": "170.99",
    "profit": "20.136871",
    "commission": "0.12",
-   "month": "Януари"
+   "month": "Януари",
+   "watchOnly": false
   },
   {
    "id": "p17",
@@ -1974,7 +1991,8 @@
    "suma_client": "367.71",
    "profit": "317.24",
    "commission": "0.22",
-   "month": "Януари"
+   "month": "Януари",
+   "watchOnly": false
   },
   {
    "id": "p18",
@@ -1988,7 +2006,8 @@
    "suma_client": "188.45",
    "profit": "22.190988",
    "commission": "0.12",
-   "month": "Януари"
+   "month": "Януари",
+   "watchOnly": false
   },
   {
    "id": "p19",
@@ -2002,7 +2021,8 @@
    "suma_client": "174.49",
    "profit": "20.528235",
    "commission": "0.12",
-   "month": "Януари"
+   "month": "Януари",
+   "watchOnly": false
   },
   {
    "id": "p20",
@@ -2016,7 +2036,8 @@
    "suma_client": "86.05",
    "profit": "55.679412",
    "commission": "0.22",
-   "month": "Януари"
+   "month": "Януари",
+   "watchOnly": false
   },
   {
    "id": "p21",
@@ -2030,7 +2051,8 @@
    "suma_client": "938.0392156862745",
    "profit": "122.352941",
    "commission": "0.22",
-   "month": "Януари"
+   "month": "Януари",
+   "watchOnly": false
   },
   {
    "id": "p22",
@@ -2044,7 +2066,8 @@
    "suma_client": "188.45",
    "profit": "22.190988",
    "commission": "0.12",
-   "month": "Януари"
+   "month": "Януари",
+   "watchOnly": false
   },
   {
    "id": "p23",
@@ -2058,7 +2081,8 @@
    "suma_client": "0",
    "profit": "0.0",
    "commission": "",
-   "month": "Януари"
+   "month": "Януари",
+   "watchOnly": false
   },
   {
    "id": "p24",
@@ -2072,7 +2096,8 @@
    "suma_client": "367.71",
    "profit": "237.93",
    "commission": "0.22",
-   "month": "Януари"
+   "month": "Януари",
+   "watchOnly": false
   },
   {
    "id": "p25",
@@ -2086,7 +2111,8 @@
    "suma_client": "188.45",
    "profit": "22.190988",
    "commission": "0.12",
-   "month": "Януари"
+   "month": "Януари",
+   "watchOnly": false
   },
   {
    "id": "p26",
@@ -2100,7 +2126,8 @@
    "suma_client": "108.72",
    "profit": "46.898824",
    "commission": "0.22",
-   "month": "Януари"
+   "month": "Януари",
+   "watchOnly": false
   },
   {
    "id": "p27",
@@ -2114,7 +2141,8 @@
    "suma_client": "188.45",
    "profit": "22.190988",
    "commission": "0.12",
-   "month": "Януари"
+   "month": "Януари",
+   "watchOnly": false
   },
   {
    "id": "p28",
@@ -2128,7 +2156,8 @@
    "suma_client": "230.47",
    "profit": "27.134518",
    "commission": "0.12",
-   "month": "Февруари"
+   "month": "Февруари",
+   "watchOnly": false
   },
   {
    "id": "p29",
@@ -2142,7 +2171,8 @@
    "suma_client": "204.8",
    "profit": "24.114518",
    "commission": "0.12",
-   "month": "Февруари"
+   "month": "Февруари",
+   "watchOnly": false
   },
   {
    "id": "p30",
@@ -2156,7 +2186,8 @@
    "suma_client": "460.47",
    "profit": "99.317059",
    "commission": "0.22",
-   "month": "Февруари"
+   "month": "Февруари",
+   "watchOnly": false
   },
   {
    "id": "p31",
@@ -2170,7 +2201,8 @@
    "suma_client": "204.8",
    "profit": "204.8",
    "commission": "0.12",
-   "month": "Февруари"
+   "month": "Февруари",
+   "watchOnly": false
   },
   {
    "id": "p32",
@@ -2184,7 +2216,8 @@
    "suma_client": "466.58",
    "profit": "256.161569",
    "commission": "0.22",
-   "month": "Февруари"
+   "month": "Февруари",
+   "watchOnly": false
   },
   {
    "id": "p33",
@@ -2198,7 +2231,8 @@
    "suma_client": "476.85",
    "profit": "102.85",
    "commission": "0.22",
-   "month": "Февруари"
+   "month": "Февруари",
+   "watchOnly": false
   },
   {
    "id": "p34",
@@ -2212,7 +2246,8 @@
    "suma_client": "5867.28",
    "profit": "1265.491765",
    "commission": "0.22",
-   "month": "Февруари"
+   "month": "Февруари",
+   "watchOnly": false
   },
   {
    "id": "p35",
@@ -2226,7 +2261,8 @@
    "suma_client": "241.7",
    "profit": "52.131373",
    "commission": "0.22",
-   "month": "Февруари"
+   "month": "Февруари",
+   "watchOnly": false
   },
   {
    "id": "p36",
@@ -2240,7 +2276,8 @@
    "suma_client": "230.47",
    "profit": "-166.391953",
    "commission": "0.12",
-   "month": "Февруари"
+   "month": "Февруари",
+   "watchOnly": false
   },
   {
    "id": "p37",
@@ -2254,7 +2291,8 @@
    "suma_client": "613.5529411764705",
    "profit": "0.0",
    "commission": "0.22",
-   "month": "Май"
+   "month": "Май",
+   "watchOnly": false
   },
   {
    "id": "p38",
@@ -2268,7 +2306,8 @@
    "suma_client": "0",
    "profit": "0.0",
    "commission": "0.22",
-   "month": "Февруари"
+   "month": "Февруари",
+   "watchOnly": false
   },
   {
    "id": "p39",
@@ -2282,7 +2321,8 @@
    "suma_client": "",
    "profit": "0.0",
    "commission": "",
-   "month": "Февруари"
+   "month": "Февруари",
+   "watchOnly": true
   },
   {
    "id": "p40",
@@ -2296,7 +2336,8 @@
    "suma_client": "230.08",
    "profit": "76.69451",
    "commission": "0.22",
-   "month": "Февруари"
+   "month": "Февруари",
+   "watchOnly": false
   },
   {
    "id": "p41",
@@ -2310,7 +2351,8 @@
    "suma_client": "380.02",
    "profit": "81.965098",
    "commission": "0.22",
-   "month": "Февруари"
+   "month": "Февруари",
+   "watchOnly": false
   },
   {
    "id": "p42",
@@ -2324,7 +2366,8 @@
    "suma_client": "",
    "profit": "0.0",
    "commission": "",
-   "month": "Февруари"
+   "month": "Февруари",
+   "watchOnly": false
   },
   {
    "id": "p43",
@@ -2338,7 +2381,8 @@
    "suma_client": "135.81",
    "profit": "87.877059",
    "commission": "0.22",
-   "month": "Февруари"
+   "month": "Февруари",
+   "watchOnly": false
   },
   {
    "id": "p44",
@@ -2352,7 +2396,8 @@
    "suma_client": "0",
    "profit": "0.0",
    "commission": "0.22",
-   "month": "Февруари"
+   "month": "Февруари",
+   "watchOnly": true
   },
   {
    "id": "p45",
@@ -2366,7 +2411,8 @@
    "suma_client": "316.8094117647059",
    "profit": "23.181176",
    "commission": "0.22",
-   "month": "Февруари"
+   "month": "Февруари",
+   "watchOnly": false
   },
   {
    "id": "p46",
@@ -2380,7 +2426,8 @@
    "suma_client": "80.26",
    "profit": "50.798431",
    "commission": "0.22",
-   "month": "Март"
+   "month": "Март",
+   "watchOnly": false
   },
   {
    "id": "p47",
@@ -2394,7 +2441,8 @@
    "suma_client": "424.38",
    "profit": "91.532941",
    "commission": "0.22",
-   "month": "Март"
+   "month": "Март",
+   "watchOnly": false
   },
   {
    "id": "p48",
@@ -2408,7 +2456,8 @@
    "suma_client": "248.19254901960787",
    "profit": "32.372941",
    "commission": "0.22",
-   "month": "Март"
+   "month": "Март",
+   "watchOnly": false
   },
   {
    "id": "p49",
@@ -2422,7 +2471,8 @@
    "suma_client": "230.47",
    "profit": "27.134518",
    "commission": "0.12",
-   "month": "Март"
+   "month": "Март",
+   "watchOnly": false
   },
   {
    "id": "p50",
@@ -2436,7 +2486,8 @@
    "suma_client": "1570.8",
    "profit": "100.453922",
    "commission": "0.22",
-   "month": "Март"
+   "month": "Март",
+   "watchOnly": false
   },
   {
    "id": "p51",
@@ -2450,7 +2501,8 @@
    "suma_client": "129.01",
    "profit": "83.477059",
    "commission": "0.22",
-   "month": "Март"
+   "month": "Март",
+   "watchOnly": false
   },
   {
    "id": "p52",
@@ -2464,7 +2516,8 @@
    "suma_client": "179.26",
    "profit": "21.109812",
    "commission": "0.12",
-   "month": "Март"
+   "month": "Март",
+   "watchOnly": false
   },
   {
    "id": "p53",
@@ -2478,7 +2531,8 @@
    "suma_client": "437",
    "profit": "115.287059",
    "commission": "0.22",
-   "month": "Март"
+   "month": "Март",
+   "watchOnly": false
   },
   {
    "id": "p54",
@@ -2492,7 +2546,8 @@
    "suma_client": "169.03",
    "profit": "19.906282",
    "commission": "0.12",
-   "month": "Март"
+   "month": "Март",
+   "watchOnly": false
   },
   {
    "id": "p55",
@@ -2506,7 +2561,8 @@
    "suma_client": "475.63",
    "profit": "55.956471",
    "commission": "0.12",
-   "month": "Март"
+   "month": "Март",
+   "watchOnly": false
   },
   {
    "id": "p56",
@@ -2520,7 +2576,8 @@
    "suma_client": "91.27",
    "profit": "59.057059",
    "commission": "0.22",
-   "month": "Март"
+   "month": "Март",
+   "watchOnly": false
   },
   {
    "id": "p57",
@@ -2534,7 +2591,8 @@
    "suma_client": "283",
    "profit": "0.0",
    "commission": "",
-   "month": "Март"
+   "month": "Март",
+   "watchOnly": false
   },
   {
    "id": "p58",
@@ -2548,7 +2606,8 @@
    "suma_client": "",
    "profit": "0.0",
    "commission": "0.22",
-   "month": "Март"
+   "month": "Март",
+   "watchOnly": false
   },
   {
    "id": "p59",
@@ -2562,7 +2621,8 @@
    "suma_client": "910.66",
    "profit": "196.416863",
    "commission": "0.22",
-   "month": "Март"
+   "month": "Март",
+   "watchOnly": false
   },
   {
    "id": "p60",
@@ -2576,7 +2636,8 @@
    "suma_client": "237.19",
    "profit": "27.925106",
    "commission": "0.12",
-   "month": "Март"
+   "month": "Март",
+   "watchOnly": false
   },
   {
    "id": "p61",
@@ -2590,7 +2651,8 @@
    "suma_client": "1037.1599999999999",
    "profit": "72.36",
    "commission": "0.22",
-   "month": "Март"
+   "month": "Март",
+   "watchOnly": false
   },
   {
    "id": "p62",
@@ -2604,7 +2666,8 @@
    "suma_client": "204.8",
    "profit": "24.114518",
    "commission": "0.12",
-   "month": "Март"
+   "month": "Март",
+   "watchOnly": false
   },
   {
    "id": "p63",
@@ -2618,7 +2681,8 @@
    "suma_client": "74.32",
    "profit": "32.059608",
    "commission": "0.22",
-   "month": "Юни"
+   "month": "Юни",
+   "watchOnly": false
   },
   {
    "id": "p64",
@@ -2632,7 +2696,8 @@
    "suma_client": "383.47",
    "profit": "82.709216",
    "commission": "0.22",
-   "month": "Март"
+   "month": "Март",
+   "watchOnly": false
   },
   {
    "id": "p65",
@@ -2646,7 +2711,8 @@
    "suma_client": "94.62960784313725",
    "profit": "6.910196",
    "commission": "0.22",
-   "month": "Юни"
+   "month": "Юни",
+   "watchOnly": false
   },
   {
    "id": "p66",
@@ -2660,7 +2726,8 @@
    "suma_client": "188.45",
    "profit": "22.190988",
    "commission": "0.12",
-   "month": "Март"
+   "month": "Март",
+   "watchOnly": false
   },
   {
    "id": "p67",
@@ -2674,7 +2741,8 @@
    "suma_client": "633.4",
    "profit": "136.615686",
    "commission": "0.22",
-   "month": "Март"
+   "month": "Март",
+   "watchOnly": false
   },
   {
    "id": "p68",
@@ -2688,7 +2756,8 @@
    "suma_client": "278.07",
    "profit": "125.404118",
    "commission": "0.22",
-   "month": "Март"
+   "month": "Март",
+   "watchOnly": false
   },
   {
    "id": "p69",
@@ -2702,7 +2771,8 @@
    "suma_client": "838.54",
    "profit": "285.81",
    "commission": "0.22",
-   "month": "Юни"
+   "month": "Юни",
+   "watchOnly": false
   },
   {
    "id": "p70",
@@ -2716,7 +2786,8 @@
    "suma_client": "165.7",
    "profit": "35.739216",
    "commission": "0.22",
-   "month": "Март"
+   "month": "Март",
+   "watchOnly": false
   },
   {
    "id": "p71",
@@ -2730,7 +2801,8 @@
    "suma_client": "200.63",
    "profit": "43.273137",
    "commission": "0.22",
-   "month": "Март"
+   "month": "Март",
+   "watchOnly": false
   },
   {
    "id": "p72",
@@ -2744,7 +2816,8 @@
    "suma_client": "307.98",
    "profit": "36.253341",
    "commission": "0.12",
-   "month": "Март"
+   "month": "Март",
+   "watchOnly": false
   },
   {
    "id": "p73",
@@ -2758,7 +2831,8 @@
    "suma_client": "163.79",
    "profit": "105.981765",
    "commission": "0.22",
-   "month": "Юни"
+   "month": "Юни",
+   "watchOnly": false
   },
   {
    "id": "p74",
@@ -2772,7 +2846,8 @@
    "suma_client": "0",
    "profit": "0.0",
    "commission": "",
-   "month": "Март"
+   "month": "Март",
+   "watchOnly": false
   },
   {
    "id": "p75",
@@ -2786,7 +2861,8 @@
    "suma_client": "0",
    "profit": "0.0",
    "commission": "0.22",
-   "month": "Април"
+   "month": "Април",
+   "watchOnly": false
   },
   {
    "id": "p76",
@@ -2800,7 +2876,8 @@
    "suma_client": "334.89",
    "profit": "72.231176",
    "commission": "0.22",
-   "month": "Април"
+   "month": "Април",
+   "watchOnly": false
   },
   {
    "id": "p77",
@@ -2814,7 +2891,8 @@
    "suma_client": "333.32",
    "profit": "71.892549",
    "commission": "0.22",
-   "month": "Април"
+   "month": "Април",
+   "watchOnly": false
   },
   {
    "id": "p78",
@@ -2828,7 +2906,8 @@
    "suma_client": "836.4",
    "profit": "180.4",
    "commission": "0.22",
-   "month": "Април"
+   "month": "Април",
+   "watchOnly": false
   },
   {
    "id": "p79",
@@ -2842,7 +2921,8 @@
    "suma_client": "206.09",
    "profit": "133.352353",
    "commission": "0.22",
-   "month": "Април"
+   "month": "Април",
+   "watchOnly": false
   },
   {
    "id": "p80",
@@ -2856,7 +2936,8 @@
    "suma_client": "0",
    "profit": "0.0",
    "commission": "0.22",
-   "month": "Април"
+   "month": "Април",
+   "watchOnly": false
   },
   {
    "id": "p81",
@@ -2870,7 +2951,8 @@
    "suma_client": "712.5490196078431",
    "profit": "92.941176",
    "commission": "0.22",
-   "month": "Април"
+   "month": "Април",
+   "watchOnly": false
   },
   {
    "id": "p82",
@@ -2884,7 +2966,8 @@
    "suma_client": "169.03",
    "profit": "36.457451",
    "commission": "0.22",
-   "month": "Април"
+   "month": "Април",
+   "watchOnly": false
   },
   {
    "id": "p83",
@@ -2898,7 +2981,8 @@
    "suma_client": "230.47",
    "profit": "49.709216",
    "commission": "0.22",
-   "month": "Април"
+   "month": "Април",
+   "watchOnly": false
   },
   {
    "id": "p84",
@@ -2912,7 +2996,8 @@
    "suma_client": "0",
    "profit": "0.0",
    "commission": "0.22",
-   "month": "Април"
+   "month": "Април",
+   "watchOnly": false
   },
   {
    "id": "p85",
@@ -2926,7 +3011,8 @@
    "suma_client": "411.18",
    "profit": "41.58",
    "commission": "0.22",
-   "month": "Април"
+   "month": "Април",
+   "watchOnly": false
   },
   {
    "id": "p86",
@@ -2940,7 +3026,8 @@
    "suma_client": "190.12",
    "profit": "123.018824",
    "commission": "0.22",
-   "month": "Април"
+   "month": "Април",
+   "watchOnly": false
   },
   {
    "id": "p87",
@@ -2954,7 +3041,8 @@
    "suma_client": "314.16",
    "profit": "203.28",
    "commission": "0.22",
-   "month": "Април"
+   "month": "Април",
+   "watchOnly": false
   },
   {
    "id": "p88",
@@ -2968,7 +3056,8 @@
    "suma_client": "224.4",
    "profit": "145.2",
    "commission": "0.22",
-   "month": "Април"
+   "month": "Април",
+   "watchOnly": false
   },
   {
    "id": "p89",
@@ -2982,7 +3071,8 @@
    "suma_client": "186.75",
    "profit": "80.558824",
    "commission": "0.22",
-   "month": "Април"
+   "month": "Април",
+   "watchOnly": false
   },
   {
    "id": "p90",
@@ -2996,7 +3086,8 @@
    "suma_client": "382.7",
    "profit": "82.543137",
    "commission": "0.22",
-   "month": "Април"
+   "month": "Април",
+   "watchOnly": false
   },
   {
    "id": "p91",
@@ -3010,7 +3101,8 @@
    "suma_client": "188.45",
    "profit": "40.646078",
    "commission": "0.22",
-   "month": "Април"
+   "month": "Април",
+   "watchOnly": false
   },
   {
    "id": "p92",
@@ -3024,7 +3116,8 @@
    "suma_client": "1237.6583333333333",
    "profit": "72.803431",
    "commission": "0.22",
-   "month": "Април"
+   "month": "Април",
+   "watchOnly": false
   },
   {
    "id": "p93",
@@ -3038,7 +3131,8 @@
    "suma_client": "188.45",
    "profit": "40.646078",
    "commission": "0.22",
-   "month": "Април"
+   "month": "Април",
+   "watchOnly": false
   },
   {
    "id": "p94",
@@ -3052,7 +3146,8 @@
    "suma_client": "3165.16",
    "profit": "682.681569",
    "commission": "0.22",
-   "month": "Април"
+   "month": "Април",
+   "watchOnly": false
   },
   {
    "id": "p95",
@@ -3066,7 +3161,8 @@
    "suma_client": "230.47",
    "profit": "0.0",
    "commission": "0.12",
-   "month": "Май"
+   "month": "Май",
+   "watchOnly": false
   },
   {
    "id": "p96",
@@ -3080,7 +3176,8 @@
    "suma_client": "486.95",
    "profit": "0.0",
    "commission": "0.22",
-   "month": "Май"
+   "month": "Май",
+   "watchOnly": false
   },
   {
    "id": "p97",
@@ -3094,7 +3191,8 @@
    "suma_client": "170.74",
    "profit": "20.107459",
    "commission": "0.12",
-   "month": "Май"
+   "month": "Май",
+   "watchOnly": false
   },
   {
    "id": "p98",
@@ -3108,7 +3206,8 @@
    "suma_client": "645.1545098039215",
    "profit": "84.150588",
    "commission": "0.22",
-   "month": "Май"
+   "month": "Май",
+   "watchOnly": false
   },
   {
    "id": "p99",
@@ -3122,7 +3221,8 @@
    "suma_client": "230.47",
    "profit": "27.134518",
    "commission": "0.12",
-   "month": "Май"
+   "month": "Май",
+   "watchOnly": false
   },
   {
    "id": "p100",
@@ -3136,7 +3236,8 @@
    "suma_client": "188.45",
    "profit": "22.190988",
    "commission": "0.12",
-   "month": "Май"
+   "month": "Май",
+   "watchOnly": false
   },
   {
    "id": "p101",
@@ -3150,7 +3251,8 @@
    "suma_client": "4712.4",
    "profit": "277.2",
    "commission": "0.22",
-   "month": "Май"
+   "month": "Май",
+   "watchOnly": false
   },
   {
    "id": "p102",
@@ -3164,7 +3266,8 @@
    "suma_client": "621",
    "profit": "81.0",
    "commission": "0.22",
-   "month": "Май"
+   "month": "Май",
+   "watchOnly": false
   },
   {
    "id": "p103",
@@ -3178,7 +3281,8 @@
    "suma_client": "880.9901960784314",
    "profit": "114.911765",
    "commission": "0.22",
-   "month": "Май"
+   "month": "Май",
+   "watchOnly": false
   },
   {
    "id": "p104",
@@ -3192,7 +3296,8 @@
    "suma_client": "230.47",
    "profit": "27.134518",
    "commission": "0.12",
-   "month": "Май"
+   "month": "Май",
+   "watchOnly": false
   },
   {
    "id": "p105",
@@ -3206,7 +3311,8 @@
    "suma_client": "355.58",
    "profit": "76.693725",
    "commission": "0.22",
-   "month": "Май"
+   "month": "Май",
+   "watchOnly": false
   },
   {
    "id": "p106",
@@ -3220,7 +3326,8 @@
    "suma_client": "249.9",
    "profit": "53.9",
    "commission": "0.22",
-   "month": "Май"
+   "month": "Май",
+   "watchOnly": false
   },
   {
    "id": "p107",
@@ -3234,7 +3341,8 @@
    "suma_client": "144.97",
    "profit": "17.075694",
    "commission": "0.12",
-   "month": "Май"
+   "month": "Май",
+   "watchOnly": false
   },
   {
    "id": "p108",
@@ -3248,7 +3356,8 @@
    "suma_client": "1043.46",
    "profit": "225.06",
    "commission": "0.22",
-   "month": "Май"
+   "month": "Май",
+   "watchOnly": false
   },
   {
    "id": "p109",
@@ -3262,7 +3371,8 @@
    "suma_client": "230.47",
    "profit": "27.134518",
    "commission": "0.12",
-   "month": "Май"
+   "month": "Май",
+   "watchOnly": false
   },
   {
    "id": "p110",
@@ -3276,7 +3386,8 @@
    "suma_client": "826.36",
    "profit": "178.23451",
    "commission": "0.22",
-   "month": "Май"
+   "month": "Май",
+   "watchOnly": false
   },
   {
    "id": "p111",
@@ -3290,7 +3401,8 @@
    "suma_client": "2752.1349019607846",
    "profit": "358.974118",
    "commission": "0.22",
-   "month": "Май"
+   "month": "Май",
+   "watchOnly": false
   },
   {
    "id": "p112",
@@ -3304,7 +3416,8 @@
    "suma_client": "270.54",
    "profit": "193.626765",
    "commission": "0.22",
-   "month": "Юни"
+   "month": "Юни",
+   "watchOnly": false
   },
   {
    "id": "p113",
@@ -3318,7 +3431,8 @@
    "suma_client": "230.47",
    "profit": "27.134118",
    "commission": "0.12",
-   "month": "Юни"
+   "month": "Юни",
+   "watchOnly": false
   },
   {
    "id": "p114",
@@ -3332,7 +3446,8 @@
    "suma_client": "1165.6",
    "profit": "173.6",
    "commission": "0.22",
-   "month": "Юни"
+   "month": "Юни",
+   "watchOnly": false
   },
   {
    "id": "p115",
@@ -3346,7 +3461,8 @@
    "suma_client": "299",
    "profit": "128.980392",
    "commission": "0.22",
-   "month": "Юни"
+   "month": "Юни",
+   "watchOnly": false
   },
   {
    "id": "p116",
@@ -3360,7 +3476,8 @@
    "suma_client": "784.89",
    "profit": "169.29",
    "commission": "0.22",
-   "month": "Юни"
+   "month": "Юни",
+   "watchOnly": false
   },
   {
    "id": "p117",
@@ -3374,7 +3491,8 @@
    "suma_client": "156.25",
    "profit": "18.402353",
    "commission": "0.12",
-   "month": "Юни"
+   "month": "Юни",
+   "watchOnly": false
   },
   {
    "id": "p118",
@@ -3388,7 +3506,8 @@
    "suma_client": "160.48",
    "profit": "69.226667",
    "commission": "0.22",
-   "month": "Юни"
+   "month": "Юни",
+   "watchOnly": false
   },
   {
    "id": "p119",
@@ -3402,7 +3521,8 @@
    "suma_client": "1185.68",
    "profit": "139.511765",
    "commission": "0.12",
-   "month": "Юни"
+   "month": "Юни",
+   "watchOnly": false
   },
   {
    "id": "p120",
@@ -3416,7 +3536,8 @@
    "suma_client": "306.98",
    "profit": "66.211373",
    "commission": "0.22",
-   "month": "Юни"
+   "month": "Юни",
+   "watchOnly": false
   },
   {
    "id": "p121",
@@ -3430,7 +3551,8 @@
    "suma_client": "183.79",
    "profit": "79.281961",
    "commission": "0.22",
-   "month": "Юни"
+   "month": "Юни",
+   "watchOnly": false
   },
   {
    "id": "p122",
@@ -3444,7 +3566,8 @@
    "suma_client": "171.1",
    "profit": "20.149412",
    "commission": "0.12",
-   "month": "Юни"
+   "month": "Юни",
+   "watchOnly": false
   },
   {
    "id": "p123",
@@ -3458,7 +3581,8 @@
    "suma_client": "383.72",
    "profit": "82.763137",
    "commission": "0.22",
-   "month": "Юни"
+   "month": "Юни",
+   "watchOnly": false
   },
   {
    "id": "p124",
@@ -3472,7 +3596,8 @@
    "suma_client": "169.03",
    "profit": "19.906282",
    "commission": "0.12",
-   "month": "Юли"
+   "month": "Юли",
+   "watchOnly": false
   },
   {
    "id": "p125",
@@ -3486,7 +3611,8 @@
    "suma_client": "1002.54",
    "profit": "140.14",
    "commission": "0.22",
-   "month": "Юли"
+   "month": "Юли",
+   "watchOnly": false
   },
   {
    "id": "p126",
@@ -3500,7 +3626,8 @@
    "suma_client": "496.79999999999995",
    "profit": "64.8",
    "commission": "0.22",
-   "month": "Юли"
+   "month": "Юли",
+   "watchOnly": false
   },
   {
    "id": "p127",
@@ -3514,7 +3641,8 @@
    "suma_client": "188.45",
    "profit": "22.190988",
    "commission": "0.12",
-   "month": "Юли"
+   "month": "Юли",
+   "watchOnly": false
   },
   {
    "id": "p128",
@@ -3528,7 +3656,8 @@
    "suma_client": "502.76",
    "profit": "108.438431",
    "commission": "0.22",
-   "month": "Юли"
+   "month": "Юли",
+   "watchOnly": false
   },
   {
    "id": "p129",
@@ -3542,7 +3671,8 @@
    "suma_client": "204.8",
    "profit": "24.114518",
    "commission": "0.12",
-   "month": "Юли"
+   "month": "Юли",
+   "watchOnly": false
   },
   {
    "id": "p130",
@@ -3556,7 +3686,8 @@
    "suma_client": "502.76",
    "profit": "108.438431",
    "commission": "0.22",
-   "month": "Юли"
+   "month": "Юли",
+   "watchOnly": false
   },
   {
    "id": "p131",
@@ -3570,7 +3701,8 @@
    "suma_client": "204.8",
    "profit": "24.114518",
    "commission": "0.12",
-   "month": "Юли"
+   "month": "Юли",
+   "watchOnly": false
   },
   {
    "id": "p132",
@@ -3584,7 +3716,8 @@
    "suma_client": "502.76",
    "profit": "108.438431",
    "commission": "0.22",
-   "month": "Юли"
+   "month": "Юли",
+   "watchOnly": false
   },
   {
    "id": "p133",
@@ -3598,7 +3731,8 @@
    "suma_client": "204.8",
    "profit": "24.114518",
    "commission": "0.12",
-   "month": "Юли"
+   "month": "Юли",
+   "watchOnly": false
   },
   {
    "id": "p134",
@@ -3612,7 +3746,8 @@
    "suma_client": "348.84",
    "profit": "75.24",
    "commission": "0.22",
-   "month": "Юли"
+   "month": "Юли",
+   "watchOnly": false
   },
   {
    "id": "p135",
@@ -3626,7 +3761,8 @@
    "suma_client": "188.45",
    "profit": "22.190988",
    "commission": "0.12",
-   "month": "Юли"
+   "month": "Юли",
+   "watchOnly": false
   },
   {
    "id": "p136",
@@ -3640,7 +3776,8 @@
    "suma_client": "161.91",
    "profit": "19.068635",
    "commission": "0.12",
-   "month": "Юли"
+   "month": "Юли",
+   "watchOnly": false
   },
   {
    "id": "p137",
@@ -3654,7 +3791,8 @@
    "suma_client": "1062.43",
    "profit": "229.151569",
    "commission": "0.22",
-   "month": "Юли"
+   "month": "Юли",
+   "watchOnly": false
   },
   {
    "id": "p138",
@@ -3668,7 +3806,8 @@
    "suma_client": "188.45",
    "profit": "22.190988",
    "commission": "0.12",
-   "month": "Юли"
+   "month": "Юли",
+   "watchOnly": false
   },
   {
    "id": "p139",
@@ -3682,7 +3821,8 @@
    "suma_client": "8057",
    "profit": "1737.784314",
    "commission": "0.22",
-   "month": "Юли"
+   "month": "Юли",
+   "watchOnly": false
   },
   {
    "id": "p140",
@@ -3696,7 +3836,8 @@
    "suma_client": "449.81",
    "profit": "52.939224",
    "commission": "0.12",
-   "month": "Юли"
+   "month": "Юли",
+   "watchOnly": false
   },
   {
    "id": "p141",
@@ -3710,7 +3851,8 @@
    "suma_client": "81.28",
    "profit": "17.53098",
    "commission": "0.22",
-   "month": "Юли"
+   "month": "Юли",
+   "watchOnly": false
   },
   {
    "id": "p142",
@@ -3724,7 +3866,8 @@
    "suma_client": "169.03",
    "profit": "19.906282",
    "commission": "0.12",
-   "month": "Юли"
+   "month": "Юли",
+   "watchOnly": false
   },
   {
    "id": "p143",
@@ -3738,7 +3881,8 @@
    "suma_client": "108.73",
    "profit": "-27.873333",
    "commission": "0.22",
-   "month": "Юли"
+   "month": "Юли",
+   "watchOnly": false
   },
   {
    "id": "p144",
@@ -3752,7 +3896,8 @@
    "suma_client": "765",
    "profit": "165.0",
    "commission": "0.22",
-   "month": "Юли"
+   "month": "Юли",
+   "watchOnly": false
   },
   {
    "id": "p145",
@@ -3766,7 +3911,8 @@
    "suma_client": "613.5529411764705",
    "profit": "0.0",
    "commission": "0.22",
-   "month": "Август"
+   "month": "Август",
+   "watchOnly": false
   },
   {
    "id": "p146",
@@ -3780,7 +3926,8 @@
    "suma_client": "204.65",
    "profit": "88.280392",
    "commission": "0.22",
-   "month": "Август"
+   "month": "Август",
+   "watchOnly": false
   },
   {
    "id": "p147",
@@ -3794,7 +3941,8 @@
    "suma_client": "0",
    "profit": "0.0",
    "commission": "0.22",
-   "month": "Август"
+   "month": "Август",
+   "watchOnly": true
   },
   {
    "id": "p148",
@@ -3808,7 +3956,8 @@
    "suma_client": "155.79",
    "profit": "18.348235",
    "commission": "0.12",
-   "month": "Август"
+   "month": "Август",
+   "watchOnly": false
   },
   {
    "id": "p149",
@@ -3822,7 +3971,8 @@
    "suma_client": "1024.1223529411766",
    "profit": "133.581176",
    "commission": "0.22",
-   "month": "Август"
+   "month": "Август",
+   "watchOnly": false
   },
   {
    "id": "p150",
@@ -3836,7 +3986,8 @@
    "suma_client": "204.8",
    "profit": "24.114118",
    "commission": "0.12",
-   "month": "Септември"
+   "month": "Септември",
+   "watchOnly": false
   },
   {
    "id": "p151",
@@ -3850,7 +4001,8 @@
    "suma_client": "0",
    "profit": "0.02",
    "commission": "0.12",
-   "month": "Септември"
+   "month": "Септември",
+   "watchOnly": false
   },
   {
    "id": "p152",
@@ -3864,7 +4016,8 @@
    "suma_client": "402.55",
    "profit": "70.55",
    "commission": "0.22",
-   "month": "Септември"
+   "month": "Септември",
+   "watchOnly": false
   },
   {
    "id": "p153",
@@ -3878,7 +4031,8 @@
    "suma_client": "299.88",
    "profit": "64.68",
    "commission": "0.22",
-   "month": "Септември"
+   "month": "Септември",
+   "watchOnly": false
   },
   {
    "id": "p154",
@@ -3892,7 +4046,8 @@
    "suma_client": "230.47",
    "profit": "27.134118",
    "commission": "0.12",
-   "month": "Септември"
+   "month": "Септември",
+   "watchOnly": false
   },
   {
    "id": "p155",
@@ -3906,7 +4061,8 @@
    "suma_client": "557.3094117647059",
    "profit": "83.003529",
    "commission": "0.22",
-   "month": "Септември"
+   "month": "Септември",
+   "watchOnly": false
   },
   {
    "id": "p156",
@@ -3920,7 +4076,8 @@
    "suma_client": "188.45",
    "profit": "22.190588",
    "commission": "0.12",
-   "month": "Септември"
+   "month": "Септември",
+   "watchOnly": false
   },
   {
    "id": "p157",
@@ -3934,7 +4091,8 @@
    "suma_client": "170.74",
    "profit": "20.107059",
    "commission": "0.12",
-   "month": "Септември"
+   "month": "Септември",
+   "watchOnly": false
   },
   {
    "id": "p158",
@@ -3948,7 +4106,8 @@
    "suma_client": "1600.5615",
    "profit": "228.1615",
    "commission": "0.22",
-   "month": "Септември"
+   "month": "Септември",
+   "watchOnly": false
   },
   {
    "id": "p159",
@@ -3962,7 +4121,8 @@
    "suma_client": "230.47",
    "profit": "27.134118",
    "commission": "0.12",
-   "month": "Септември"
+   "month": "Септември",
+   "watchOnly": false
   },
   {
    "id": "p160",
@@ -3976,7 +4136,8 @@
    "suma_client": "215.15",
    "profit": "25.332165",
    "commission": "0.12",
-   "month": "Октомври"
+   "month": "Октомври",
+   "watchOnly": false
   },
   {
    "id": "p161",
@@ -3990,7 +4151,8 @@
    "suma_client": "4450.599999999999",
    "profit": "642.6",
    "commission": "0.22",
-   "month": "Октомври"
+   "month": "Октомври",
+   "watchOnly": false
   },
   {
    "id": "p162",
@@ -4004,7 +4166,8 @@
    "suma_client": "0",
    "profit": "0.0",
    "commission": "",
-   "month": "Октомври"
+   "month": "Октомври",
+   "watchOnly": true
   },
   {
    "id": "p163",
@@ -4018,7 +4181,8 @@
    "suma_client": "230.48",
    "profit": "27.135694",
    "commission": "0.12",
-   "month": "Октомври"
+   "month": "Октомври",
+   "watchOnly": false
   },
   {
    "id": "p164",
@@ -4032,7 +4196,8 @@
    "suma_client": "0",
    "profit": "0.0204",
    "commission": "0.12",
-   "month": "Октомври"
+   "month": "Октомври",
+   "watchOnly": false
   },
   {
    "id": "p165",
@@ -4046,7 +4211,8 @@
    "suma_client": "138.85029411764705",
    "profit": "11.171863",
    "commission": "0.22",
-   "month": "Октомври"
+   "month": "Октомври",
+   "watchOnly": false
   },
   {
    "id": "p166",
@@ -4060,7 +4226,8 @@
    "suma_client": "188.45",
    "profit": "22.190988",
    "commission": "0.12",
-   "month": "Октомври"
+   "month": "Октомври",
+   "watchOnly": false
   },
   {
    "id": "p167",
@@ -4074,7 +4241,8 @@
    "suma_client": "435.66",
    "profit": "93.965882",
    "commission": "0.22",
-   "month": "Октомври"
+   "month": "Октомври",
+   "watchOnly": false
   },
   {
    "id": "p168",
@@ -4088,7 +4256,8 @@
    "suma_client": "188.45",
    "profit": "22.190988",
    "commission": "0.12",
-   "month": "Октомври"
+   "month": "Октомври",
+   "watchOnly": false
   },
   {
    "id": "p169",
@@ -4102,7 +4271,8 @@
    "suma_client": "366.71686274509807",
    "profit": "8.944314",
    "commission": "0.22",
-   "month": "Октомври"
+   "month": "Октомври",
+   "watchOnly": false
   },
   {
    "id": "p170",
@@ -4116,7 +4286,8 @@
    "suma_client": "0",
    "profit": "0.02",
    "commission": "0.12",
-   "month": "Октомври"
+   "month": "Октомври",
+   "watchOnly": false
   },
   {
    "id": "p171",
@@ -4130,7 +4301,8 @@
    "suma_client": "188.45",
    "profit": "22.190588",
    "commission": "0.12",
-   "month": "Октомври"
+   "month": "Октомври",
+   "watchOnly": false
   },
   {
    "id": "p172",
@@ -4144,7 +4316,8 @@
    "suma_client": "1406",
    "profit": "222.0",
    "commission": "0.22",
-   "month": "Октомври"
+   "month": "Октомври",
+   "watchOnly": false
   },
   {
    "id": "p173",
@@ -4158,7 +4331,8 @@
    "suma_client": "1007.1",
    "profit": "217.217647",
    "commission": "0.22",
-   "month": "Октомври"
+   "month": "Октомври",
+   "watchOnly": false
   },
   {
    "id": "p174",
@@ -4172,7 +4346,8 @@
    "suma_client": "531.6427450980392",
    "profit": "69.344706",
    "commission": "0.22",
-   "month": "Ноември"
+   "month": "Ноември",
+   "watchOnly": false
   },
   {
    "id": "p175",
@@ -4186,7 +4361,8 @@
    "suma_client": "299.06",
    "profit": "64.503137",
    "commission": "0.22",
-   "month": "Ноември"
+   "month": "Ноември",
+   "watchOnly": false
   },
   {
    "id": "p176",
@@ -4200,7 +4376,8 @@
    "suma_client": "374.0635294117647",
    "profit": "45.216471",
    "commission": "0.22",
-   "month": "Ноември"
+   "month": "Ноември",
+   "watchOnly": false
   },
   {
    "id": "p177",
@@ -4214,7 +4391,8 @@
    "suma_client": "726.01",
    "profit": "156.590392",
    "commission": "0.22",
-   "month": "Ноември"
+   "month": "Ноември",
+   "watchOnly": false
   },
   {
    "id": "p178",
@@ -4228,7 +4406,8 @@
    "suma_client": "76.79",
    "profit": "9.054118",
    "commission": "0.12",
-   "month": "Ноември"
+   "month": "Ноември",
+   "watchOnly": false
   },
   {
    "id": "p179",
@@ -4242,7 +4421,8 @@
    "suma_client": "749.09",
    "profit": "161.568431",
    "commission": "0.22",
-   "month": "Ноември"
+   "month": "Ноември",
+   "watchOnly": false
   },
   {
    "id": "p180",
@@ -4256,7 +4436,8 @@
    "suma_client": "307.98",
    "profit": "36.252941",
    "commission": "0.12",
-   "month": "Ноември"
+   "month": "Ноември",
+   "watchOnly": false
   },
   {
    "id": "p181",
@@ -4270,7 +4451,8 @@
    "suma_client": "983.18",
    "profit": "212.058431",
    "commission": "0.22",
-   "month": "Ноември"
+   "month": "Ноември",
+   "watchOnly": false
   },
   {
    "id": "p182",
@@ -4284,7 +4466,8 @@
    "suma_client": "1753.86",
    "profit": "206.356471",
    "commission": "0.12",
-   "month": "Ноември"
+   "month": "Ноември",
+   "watchOnly": false
   },
   {
    "id": "p183",
@@ -4298,7 +4481,8 @@
    "suma_client": "0",
    "profit": "0.0",
    "commission": "0.22",
-   "month": "Ноември"
+   "month": "Ноември",
+   "watchOnly": false
   },
   {
    "id": "p184",
@@ -4312,7 +4496,8 @@
    "suma_client": "453.49",
    "profit": "97.811569",
    "commission": "0.22",
-   "month": "Ноември"
+   "month": "Ноември",
+   "watchOnly": false
   },
   {
    "id": "p185",
@@ -4326,7 +4511,8 @@
    "suma_client": "453.49",
    "profit": "97.811569",
    "commission": "0.22",
-   "month": "Ноември"
+   "month": "Ноември",
+   "watchOnly": false
   },
   {
    "id": "p186",
@@ -4340,7 +4526,8 @@
    "suma_client": "706.3345098039216",
    "profit": "92.130588",
    "commission": "0.22",
-   "month": "Ноември"
+   "month": "Ноември",
+   "watchOnly": false
   },
   {
    "id": "p187",
@@ -4354,7 +4541,8 @@
    "suma_client": "1191.87",
    "profit": "257.07",
    "commission": "0.22",
-   "month": "Ноември"
+   "month": "Ноември",
+   "watchOnly": false
   },
   {
    "id": "p188",
@@ -4368,7 +4556,8 @@
    "suma_client": "188.45",
    "profit": "22.190588",
    "commission": "0.12",
-   "month": "Ноември"
+   "month": "Ноември",
+   "watchOnly": false
   },
   {
    "id": "p189",
@@ -4382,7 +4571,8 @@
    "suma_client": "0",
    "profit": "0.0",
    "commission": "0.22",
-   "month": "Ноември"
+   "month": "Ноември",
+   "watchOnly": false
   },
   {
    "id": "p190",
@@ -4396,7 +4586,8 @@
    "suma_client": "0",
    "profit": "0.0",
    "commission": "0.22",
-   "month": "Ноември"
+   "month": "Ноември",
+   "watchOnly": false
   },
   {
    "id": "p191",
@@ -4410,7 +4601,8 @@
    "suma_client": "0",
    "profit": "0.0",
    "commission": "0.22",
-   "month": "Ноември"
+   "month": "Ноември",
+   "watchOnly": false
   },
   {
    "id": "p192",
@@ -4424,7 +4616,8 @@
    "suma_client": "0",
    "profit": "0.0",
    "commission": "0.22",
-   "month": "Ноември"
+   "month": "Ноември",
+   "watchOnly": true
   },
   {
    "id": "p193",
@@ -4438,7 +4631,8 @@
    "suma_client": "0",
    "profit": "0.02",
    "commission": "0.12",
-   "month": "Ноември"
+   "month": "Ноември",
+   "watchOnly": false
   },
   {
    "id": "p194",
@@ -4452,7 +4646,8 @@
    "suma_client": "0",
    "profit": "0.0",
    "commission": "0.22",
-   "month": "Ноември"
+   "month": "Ноември",
+   "watchOnly": false
   },
   {
    "id": "p195",
@@ -4466,7 +4661,8 @@
    "suma_client": "#VALUE!",
    "profit": "0.0",
    "commission": "0.22",
-   "month": "Декември"
+   "month": "Декември",
+   "watchOnly": false
   },
   {
    "id": "p196",
@@ -4480,7 +4676,8 @@
    "suma_client": "0",
    "profit": "0.0",
    "commission": "0.22",
-   "month": "Декември"
+   "month": "Декември",
+   "watchOnly": false
   }
  ],
  "events": [

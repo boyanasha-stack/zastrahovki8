@@ -363,6 +363,21 @@ def main():
     # дедупликирай полиците за досиетата (маха дублирани редове от Excel)
     policies = dedup_policies(policies)
 
+    # ⭐ „Следя" = име + кола + крайна дата, но БЕЗ полица и БЕЗ сума.
+    #    Клиентът има кола, но полицата НЕ е сключена от нас — само следим дата.
+    def _n(x):
+        try:
+            return float(str(x).replace(',', '.'))
+        except Exception:
+            return 0.0
+    for p in policies:
+        p['watchOnly'] = bool(
+            p.get('endDate')
+            and not str(p.get('polica') or '').strip()
+            and _n(p.get('suma')) == 0
+            and _n(p.get('suma_client')) == 0
+        )
+
     # обобщена печалба по месеци — от СУРОВИТЕ редове (без дедуп), за да е точно колкото Excel
     fin_by_month = {}
     for f in finance:
