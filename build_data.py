@@ -102,52 +102,108 @@ def add_months(iso, months):
     last = calendar.monthrange(y2, mo2)[1]
     return f'{y2:04d}-{mo2:02d}-{min(d,last):02d}'
 
+def parse_vnoska(v):
+    """Разчита 'Поредна вноска' в какъвто и да е вид.
+    Връща (списък_номера, общо) или ([], 0) при еднократна/невалидна.
+      '1/4'      → ([1], 4)
+      '2,3,4/4'  → ([2,3,4], 4)      (един ред описва няколко вноски)
+      '3,4/4'    → ([3,4], 4)
+      '1/1'      → ([], 0)           (еднократна)
+      0.25       → ([1], 4)          (Excel превърнал 1/4 в число!)
+      0.5        → ([2], 4)
+    """
+    if v is None: return ([], 0)
+    # числов вид (0.25 = 1/4, 0.5 = 2/4, 0.75 = 3/4)
+    if isinstance(v, (int, float)):
+        f = float(v)
+        if f <= 0: return ([], 0)
+        if f >= 1: return ([], 0)          # 1.0 ≈ еднократна
+        for den in (2, 3, 4, 6, 12):
+            k = round(f * den)
+            if k >= 1 and abs(f - k / den) < 1e-9:
+                if den <= 1: return ([], 0)
+                return ([k], den)
+        return ([], 0)
+    s = str(v).strip().replace(' ', '')
+    if not s: return ([], 0)
+    # низ, който е само число: '0.25' / '0,5' → третирай като число
+    if '/' not in s:
+        try:
+            f = float(s.replace(',', '.'))
+        except Exception:
+            return ([], 0)
+        return parse_vnoska(f)
+    try:
+        left, right = s.split('/')
+        den = int(right)
+        nums = [int(x) for x in left.replace('.', ',').split(',') if x.strip() != '']
+    except Exception:
+        return ([], 0)
+    if den <= 1: return ([], 0)            # 1/1 = еднократно
+    nums = [n for n in nums if 1 <= n <= den]
+    if not nums: return ([], 0)
+    return (nums, den)
+
+
 def gen_installments(polica_id, enddate, vnoska):
     """Връща ВСИЧКИ вноски (1..N) за полицата, за да показва и предстоящите.
     Логика: крайна дата → начало = край − 1 година.
     Вноска K от N: падеж = начало + (K−1)×3 месеца.
-    '1/1' → еднократна (без вноски)."""
-    if not vnoska or '/' not in str(vnoska):
-        return []
-    try:
-        numpart, denpart = str(vnoska).split('/')
-        den = int(denpart)
-    except Exception:
-        return []
-    if den <= 1:
-        return []  # 1/1 = еднократно
-    if not enddate:
+    '1/1' / 0.25-подобни еднократни → без вноски."""
+    nums, den = parse_vnoska(vnoska)
+    if not nums or not enddate:
         return []
     start = minus_months(enddate, 12)
     out = []
+    step = 12 // den if den and 12 % den == 0 else 3
     for k in range(1, den + 1):
-        due = add_months(start, (k - 1) * 3)
+        due = add_months(start, (k - 1) * step)
         out.append({'no': k, 'of': den, 'dueDate': due})
     return out
 
 def dedup_policies(policies):
     """Премахва дублирани полици по (кола + крайна дата + тип),
     като запазва записа с най-много информация (номер на полица/вноска).
-    ВАЖНО: печалбата на дублираните редове се СЪБИРА (всеки ред = реална печалба),
-    за да съвпадат месечните суми с колона N („Печалба") в Excel."""
+    ВАЖНО 1: печалбата на дублираните редове се СЪБИРА (всеки ред = реална печалба).
+    ВАЖНО 2: номерата на вноските от ВСИЧКИ редове се запазват — напр. полица,
+             записана като '0.25' в Октомври и '0.5' в Ноември, трябва да знае
+             и двете (1/4 и 2/4), иначе губи графика на вноските."""
     best = {}
     order = []
     for p in policies:
         key = (p.get('carId'), p.get('endDate'), p.get('type'))
         score = (1 if p.get('polica') else 0) + (1 if p.get('vnoska') else 0) + (1 if p.get('suma_client') else 0)
+        nums, den = parse_vnoska(p.get('vnoska'))
         if key not in best:
             p['_profit_sum'] = num_or0(p.get('profit'))
+            p['_inst_nums'] = list(nums)
+            p['_inst_den'] = den
             best[key] = (score, p); order.append(key)
         else:
             p['_profit_sum'] = num_or0(p.get('profit'))
             acc = best[key][1].get('_profit_sum', 0) + p['_profit_sum']
+            # обедини номерата на вноските от всички редове
+            cur = best[key][1]
+            merged = sorted(set(cur.get('_inst_nums', []) + nums))
+            den_best = max(cur.get('_inst_den', 0), den)
             if score > best[key][0]:
+                if den >= cur.get('_inst_den', 0):
+                    cur['_inst_den'] = den
                 best[key] = (score, p)
+            best[key][1]['_inst_nums'] = merged
+            best[key][1]['_inst_den'] = den_best
             best[key][1]['_profit_sum'] = acc
     out = [best[k][1] for k in order]
     for p in out:
         if '_profit_sum' in p:
             p['profit'] = str(round(p.pop('_profit_sum'), 6))
+        # възстанови/попълни 'X/N' от обединените номера
+        nums = p.pop('_inst_nums', [])
+        den = p.pop('_inst_den', 0)
+        if den > 1 and nums:
+            p['vnoska'] = ','.join(str(n) for n in nums) + '/' + str(den)
+        elif den > 1:
+            p['vnoska'] = '1/' + str(den)
     for i, p in enumerate(out):
         p['id'] = 'p' + str(i)
     return out
@@ -160,17 +216,45 @@ def num_or0(x):
         return 0.0
 
 def dedup_events(events):
-    """Премахва дублирани вноски: едно събитие за (кола + тип + номер вноска + падеж)."""
+    """Премахва дублирани вноски: едно събитие за (кола + номер вноска + падеж).
+    НЕ включва 'of' в ключа — '2/2' и '2/4' на една и съща дата за същата кола
+    са СЪЩОТО събитие, записано по различен начин (Excel понякога дели вноските
+    в различни редове с различна крайна дата). Запазваме този с по-голямо 'of'."""
     seen = {}
     out = []
     for e in events:
         key = (e.get('carId'), e.get('type'), e.get('no'), e.get('date'))
         if key in seen:
-            # поднови съществуващото с по-голяма сума/по-добра информация
+            prev = seen[key]
+            if (e.get('of') or 0) > (prev.get('of') or 0):
+                out[out.index(prev)] = e
+                seen[key] = e
             continue
         seen[key] = e
         out.append(e)
-    # преномерирай id-тата
+    for i, e in enumerate(out):
+        e['id'] = 'i' + str(i)
+    return out
+
+
+def drop_impossible_installments(events):
+    """Маха вноски, които са невъзможни спрямо максималния брой вноски на полицата.
+    Напр. ако полицата е '1/4', не може да има '2/2' — това е грешно разчетен ред.
+    Правилото: за всяка (кола + дата), ако има две вноски с различни 'of',
+    запази тази с НАЙ-ГОЛЯМОТО 'of' (най-информативното), тъй като по-малкото
+    'of' идва от погрешно разчетен числов запис (0.5 → '2/2' вместо '2/4')."""
+    groups = {}
+    for e in events:
+        k = (e.get('carId'), e.get('date'))
+        groups.setdefault(k, []).append(e)
+    out = []
+    for k, lst in groups.items():
+        if len(lst) == 1:
+            out.append(lst[0]); continue
+        maxof = max((x.get('of') or 0) for x in lst)
+        # запази само тези с максимално 'of'
+        keep = [x for x in lst if (x.get('of') or 0) == maxof]
+        out.append(keep[0])
     for i, e in enumerate(out):
         e['id'] = 'i' + str(i)
     return out
@@ -289,7 +373,7 @@ def main():
         'clients': list(clients.values()),
         'cars': list(cars.values()),
         'policies': policies,
-        'events': dedup_events(events),
+        'events': drop_impossible_installments(dedup_events(events)),
         'finance': {
             'byMonth': {k: round(v, 2) for k, v in fin_by_month.items()},
             'total': round(sum(fin_by_month.values()), 2),
