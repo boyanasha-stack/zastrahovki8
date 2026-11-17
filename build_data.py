@@ -288,7 +288,24 @@ def main():
     cseq = 0; carseq = 0; pseq = 0
     month = None
 
-    for row in ws.iter_rows(min_row=2, max_col=15):
+    # ⭐ АВТОМАТИЧЕН ОБХВАТ: чете се до последния ред, който има ИМЕ в колона A
+    #    (или текст в B..G). Няма фиксиран лимит — добавяш ред, той се вижда.
+    #    Редове с празна A и само нули в H..Q се прескачат (не са клиенти).
+    last_data_row = 1
+    for r in range(2, ws.max_row + 1):
+        a = ws.cell(row=r, column=1).value
+        if a is not None and str(a).strip():
+            last_data_row = r
+            continue
+        # без име — виж дали има поне кола в B/C (иначе е празен/фантомен ред)
+        b = ws.cell(row=r, column=2).value
+        c = ws.cell(row=r, column=3).value
+        if (b is not None and str(b).strip()) or (c is not None and str(c).strip()):
+            last_data_row = r
+
+    print(f'Чета до ред {last_data_row} (последния с име/кола)')
+
+    for row in ws.iter_rows(min_row=2, max_row=last_data_row, max_col=17):
         v = [c.value for c in row]
         name = v[0]
         if name is None: continue

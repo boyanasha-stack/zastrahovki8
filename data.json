@@ -4475,7 +4475,7 @@
    "carId": "car108",
    "type": "КАСКО",
    "polica": "Evroins",
-   "endDate": "2026-11-17",
+   "endDate": "2027-11-16",
    "vnoska": "1/1",
    "suma": "",
    "suma_client": "0",
@@ -7338,6 +7338,6 @@
    "Декември": 0.0
   },
   "total": 18474.26,
-  "rows": 243
+  "rows": 242
  }
 }
