@@ -420,5 +420,30 @@ def main():
     for m, s in sorted(fin_by_month.items(), key=lambda x: -x[1]):
         print(f'   {m:<12} {s:>12.2f} €')
 
+    # ⭐ КОНТРОЛ НА ДАННИТЕ: една кола, записана на РАЗЛИЧНИ клиенти.
+    #   Това е най-честата причина за "грешно име" в приложението.
+    by_plate = {}
+    for p in policies:
+        pl = ''
+        for c in data['cars']:
+            if c['id'] == p['carId']:
+                pl = str(c.get('plate') or '').upper().replace(' ', '')
+                break
+        if not pl or p.get('watchOnly'):
+            continue
+        for c in data['clients']:
+            if c['id'] == p['clientId']:
+                nm = str(c.get('name') or '').strip()
+                if nm and pl not in by_plate.setdefault('_seen', {}):
+                    pass
+                by_plate.setdefault(pl, set()).add(nm)
+                break
+    conflicts = {k: v for k, v in by_plate.items() if k != '_seen' and len(v) > 1}
+    if conflicts:
+        print(f'\n⚠️  ВНИМАНИЕ: {len(conflicts)} коли са записани на различни клиенти:')
+        for pl, nms in sorted(conflicts.items()):
+            print(f'   {pl}:  {"  |  ".join(sorted(nms))}')
+        print('   → Провери тези редове в Excel (една кола трябва да е на един клиент).')
+
 if __name__ == '__main__':
     main()
