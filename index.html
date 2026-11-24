@@ -515,9 +515,87 @@ function openCar(id){
     +'<div class="field"><label>Адрес за пращане на полица</label><input id="car-addr" value="'+esc(car.address||'')+'" placeholder="адрес..."></div>'
     +'<button class="btn btn-primary" onclick="saveCarField(\''+car.id+'\',\'address\',document.getElementById(\'car-addr\').value)">Запази адрес</button>'
     +'<div class="detail-block"><h3>Полици ('+pols.length+')</h3>'+polHtml+'</div>'
+    +'<div class="detail-block"><h3>📎 Документи и снимки</h3>'
+    +'<div id="docList-'+car.id+'">'+docsHtml(car)+'</div>'
+    +'<input type="file" id="docFile-'+car.id+'" multiple accept="image/*,application/pdf" style="display:none" onchange="uploadDocs(\''+car.id+'\',this)">'
+    +'<div class="row-flex" style="margin-top:8px">'
+    +'<button class="btn-sm on-blue" onclick="document.getElementById(\'docFile-'+car.id+'\').click()">📷 Снимка / 📄 PDF</button>'
+    +'</div>'
+    +'<div class="meta" style="margin-top:6px;font-size:12px;">Щети, протоколи, полици — снимай или прикачи</div>'
+    +'</div>'
     +'<div class="detail-block"><h3>📝 Бележки (щети)</h3>'
     +'<div class="field"><textarea id="car-notes" placeholder="заведени щети, протоколи...">'+esc(car.notes||'')+'</textarea></div>'
     +'<button class="btn btn-secondary" onclick="saveCarField(\''+car.id+'\',\'notes\',document.getElementById(\'car-notes\').value)">Запази бележка</button></div>');
+}
+
+/* ===== 📎 ДОКУМЕНТИ КЪМ КОЛАТА (пазят се локално като base64) ===== */
+function docsKey(carId){ return 'zdocs_'+carId; }
+function getDocs(carId){
+  try { return JSON.parse(localStorage.getItem(docsKey(carId))||'[]'); } catch(e){ return []; }
+}
+function saveDocs(carId, arr){ localStorage.setItem(docsKey(carId), JSON.stringify(arr)); }
+function docsHtml(car){
+  var list = getDocs(car.id);
+  if(!list.length) return '<div class="empty" style="padding:14px;">Няма документи още.</div>';
+  return list.slice().reverse().map(function(d,i){
+    var idx = list.length-1-i;
+    var icon = (d.type||'').indexOf('pdf')>=0 ? '📄' : '📷';
+    return '<div class="list-item" style="padding:8px 10px;">'
+      +'<div class="row-flex" style="justify-content:space-between;">'
+      +'<div><div class="name" style="font-size:14px;">'+icon+' '+esc(d.name)+'</div>'
+      +'<div class="meta" style="font-size:12px;">'+esc(d.date||'')+'</div></div>'
+      +'<div class="row-flex">'
+      +'<button class="btn-sm" onclick="viewDoc(\''+car.id+'\','+idx+')">Виж</button>'
+      +'<button class="btn-sm" style="color:var(--danger)" onclick="delDoc(\''+car.id+'\','+idx+')">✕</button>'
+      +'</div></div></div>';
+  }).join('');
+}
+function uploadDocs(carId, input){
+  var files = input.files;
+  if(!files || !files.length) return;
+  var list = getDocs(carId);
+  var pending = files.length;
+  toast('Качвам '+pending+' файл(а)...');
+  for(var i=0;i<files.length;i++){
+    (function(f){
+      var reader = new FileReader();
+      reader.onload = function(){
+        list.push({name: f.name, type: f.type, date: new Date().toLocaleDateString('bg-BG'), data: reader.result});
+        saveDocs(carId, list);
+        pending--;
+        if(pending===0){
+          var el = $('docList-'+carId);
+          if(el) el.innerHTML = docsHtml(getCar(carId));
+          toast('✅ Качено');
+          input.value='';
+        }
+      };
+      reader.readAsDataURL(f);
+    })(files[i]);
+  }
+}
+function viewDoc(carId, idx){
+  var list = getDocs(carId);
+  var d = list[idx];
+  if(!d) return;
+  if((d.type||'').indexOf('pdf')>=0){
+    var w = window.open('', '_blank');
+    if(w) w.document.write('<iframe src="'+d.data+'" style="width:100%;height:100vh;border:0"></iframe>');
+    else toast('Разрешѝ pop-up');
+  } else {
+    showModal('<button class="close-x" onclick="closeModal()">&times;</button>'
+      +'<img src="'+d.data+'" style="width:100%;border-radius:12px;">'
+      +'<div class="meta" style="margin-top:8px;">'+esc(d.name)+'</div>');
+  }
+}
+function delDoc(carId, idx){
+  if(!confirm('Да изтрия ли този документ?')) return;
+  var list = getDocs(carId);
+  list.splice(idx,1);
+  saveDocs(carId, list);
+  var el = $('docList-'+carId);
+  if(el) el.innerHTML = docsHtml(getCar(carId));
+  toast('Изтрито');
 }
 
 function copyOffer(){
