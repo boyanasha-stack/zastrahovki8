@@ -209,7 +209,16 @@ function fmtDate(s){ var d=pd(s); if(!d) return '—'; var dd=('0'+d.getDate()).
 function getClient(id){ return DATA.clients.filter(function(c){return String(c.id)===String(id);})[0]; }
 function getCar(id){ return DATA.cars.filter(function(c){return String(c.id)===String(id);})[0]; }
 function carsForClient(id){ return DATA.cars.filter(function(c){return String(c.clientId)===String(id);}); }
-function policiesForCar(id){ return DATA.policies.filter(function(p){return String(p.carId)===String(id);}); }
+function policiesForCar(id){
+  /* Показва САМО актуалните полици (не са изтекли).
+     Изтекли = крайна дата < днес − 60 дни (дава 2 месеца толеранс за скоро изтекли). */
+  return DATA.policies.filter(function(p){
+    if(String(p.carId)!==String(id)) return false;
+    var d=daysUntil(p.endDate);
+    if(d===null) return true;
+    return d >= -60;        // изтекли преди повече от 60 дни → скрити
+  });
+}
 function isGo(p){ return String(p.type||'').toUpperCase().indexOf('ГО')>=0 || String(p.polica||'').indexOf('BG/')===0; }
 function num(x){ var n=parseFloat(String(x==null?'':x).replace(',','.')); return isNaN(n)?0:n; }
 function money(x){ return num(x).toFixed(2)+' €'; }
@@ -499,22 +508,21 @@ function openCar(id){
   var own=car.clientId?getClient(car.clientId):null;
   var pols=policiesForCar(id);
   var polHtml=pols.length?pols.map(function(p){
-    var st=policyStatus(p);
-    var pill = rPaid(p)?'<span class="badge ok">✅ Платена</span>':(rRenew(p)?'<span class="badge blue">🔄 Подновена</span>':'');
-    var watch = p.watchOnly?'<span class="badge" style="background:rgba(154,163,181,.18);color:var(--muted);">👁 следя · не е наша</span>':'';
-    var title = p.watchOnly ? '👁 Кола на клиента' : (isGo(p)?'ГО':'КАСКО');
-    return '<div class="list-item"><div class="name">'+title+(p.polica?' · '+esc(p.polica):'')
-      +' <span class="badge '+st.cls+'">'+st.label+'</span>'+pill+watch+'</div>'
-      +'<div class="meta">Изтича: '+fmtDate(p.endDate)+(p.suma_client?' · 💰 '+money(p.suma_client):'')+'</div>'
-      +(p.watchOnly?'':actionBtns('r', rKey(p), rRenew(p), rPaid(p), car.id))+'</div>';
-  }).join(''):'<div class="empty">Няма полици.</div>';
+    return polRowHtml(p, car);
+  }).join(''):'<div class="empty">Няма актуални полици.</div>';
+
+  var allCount = DATA.policies.filter(function(x){ return String(x.carId)===String(id); }).length;
+  var oldCount = allCount - pols.length;
+  var oldBtn = oldCount>0
+    ? '<div class="meta" style="margin-top:8px;font-size:12px;color:var(--muted);">+ '+oldCount+' изтекли (скрити) · <span style="color:var(--accent);cursor:pointer;" onclick="showOldPolicies(\''+car.id+'\')">покажи</span></div>'
+    : '';
   showModal('<button class="close-x" onclick="closeModal()">&times;</button>'
     +'<h2>🚗 '+esc((car.make||'')+' '+(car.model||''))+' <span style="color:var(--gold);font-weight:700;">'+esc(car.plate||'')+'</span></h2>'
     +'<div class="meta" style="color:var(--muted)">👤 '+esc(own?own.name:'—')+'</div>'
     +(car.vin?'<div class="meta" style="color:var(--muted)">VIN: '+esc(car.vin)+'</div>':'')
     +'<div class="field"><label>Адрес за пращане на полица</label><input id="car-addr" value="'+esc(car.address||'')+'" placeholder="адрес..."></div>'
     +'<button class="btn btn-primary" onclick="saveCarField(\''+car.id+'\',\'address\',document.getElementById(\'car-addr\').value)">Запази адрес</button>'
-    +'<div class="detail-block"><h3>Полици ('+pols.length+')</h3>'+polHtml+'</div>'
+    +'<div class="detail-block"><h3>Полици ('+pols.length+' актуални)</h3>'+polHtml+oldBtn+'</div>'
     +'<div class="detail-block"><h3>📎 Документи и снимки</h3>'
     +'<div id="docList-'+car.id+'">'+docsHtml(car)+'</div>'
     +'<input type="file" id="docFile-'+car.id+'" multiple accept="image/*,application/pdf" style="display:none" onchange="uploadDocs(\''+car.id+'\',this)">'
@@ -596,6 +604,96 @@ function delDoc(carId, idx){
   var el = $('docList-'+carId);
   if(el) el.innerHTML = docsHtml(getCar(carId));
   toast('Изтрито');
+}
+
+/* ===== 📋 ДЕТАЙЛИ НА ПОЛИЦА ===== */
+function openPolicy(pid){
+  var p = DATA.policies.filter(function(x){ return String(x.id)===String(pid); })[0];
+  if(!p){ toast('Няма полица'); return; }
+  var car = getCar(p.carId), cl = getClient(p.clientId);
+  var st = policyStatus(p);
+  var inst = DATA.events.filter(function(e){
+    return String(e.policyId)===String(pid) || (String(e.carId)===String(p.carId) && e.type==='Вноска');
+  }).sort(function(a,b){ return String(a.date).localeCompare(String(b.date)); });
+
+  var rows = [
+    ['Тип', p.watchOnly ? '👁 следя (не е наша)' : (isGo(p)?'ГО · Гражданска отговорност':'КАСКО')],
+    ['Номер', p.polica || '—'],
+    ['Валидна до', fmtDate(p.endDate)],
+    ['Статус', '<span class="badge '+st.cls+'">'+st.label+'</span>'],
+    ['Сума полица', p.suma ? money(p.suma) : '—'],
+    ['Сума клиент', p.suma_client ? money(p.suma_client) : '—'],
+    ['Комисион', p.commission || '—'],
+    ['Печалба', p.profit ? money(p.profit) : '—'],
+    ['Вноски', p.vnoska || '—'],
+    ['Рег. номер', car ? (car.plate||'—') : '—'],
+    ['Кола', car ? ((car.make||'')+' '+(car.model||'')).trim() : '—'],
+    ['Клиент', cl ? cl.name : '—']
+  ];
+  var tbl = rows.map(function(r){
+    return '<div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--line);">'
+      +'<span style="color:var(--muted);font-size:13px;">'+r[0]+'</span>'
+      +'<span style="font-weight:600;font-size:14px;text-align:right;max-width:60%;">'+r[1]+'</span></div>';
+  }).join('');
+
+  var instHtml = '';
+  if(inst.length){
+    instHtml = '<div class="detail-block"><h3>💳 Вноски ('+inst.length+')</h3>';
+    inst.forEach(function(e){
+      var dd = daysUntil(e.date);
+      var paid = vPaid(e), issued = vIssue(e);
+      var tag = paid?'<span class="badge ok">✅ Платена</span>':(issued?'<span class="badge blue">📄 Издадено</span>':(dd!==null&&dd<0?'<span class="badge danger">Просрочена</span>':(dd!==null&&dd<=7?'<span class="badge warn">Време е</span>':'<span class="badge">Предстои</span>')));
+      instHtml += '<div class="list-item" style="padding:8px 10px;">'
+        +'<div class="name" style="font-size:14px;">'+(e.no||'')+'/'+(e.of||'')+' '+tag+'</div>'
+        +'<div class="meta">📅 '+fmtDate(e.date)+(e.amount?' · 💰 '+money(e.amount):'')+'</div>'
+        +actionBtns('v', vDueKey(e), issued, paid)
+        +'</div>';
+    });
+    instHtml += '</div>';
+  }
+
+  var billBtn = (p.suma && !p.watchOnly)
+    ? '<button class="btn btn-primary" style="margin-top:10px" onclick="closeModal();openCar(\''+p.carId+'\')">📎 Виж документи на колата</button>'
+    : '';
+
+  showModal('<button class="close-x" onclick="closeModal()">&times;</button>'
+    +'<h2>'+(isGo(p)?'🛡️':'🚗')+' Полица'+(p.polica?' № '+esc(p.polica):'')+'</h2>'
+    +'<div style="margin-top:10px;">'+tbl+'</div>'
+    +instHtml
+    +billBtn
+    +'<button class="btn btn-secondary" style="margin-top:8px" onclick="closeModal();openCar(\''+p.carId+'\')">← Назад към '+esc(car?car.plate:'колата')+'</button>');
+}
+
+/* Един ред на полица (използва се и за актуални, и за изтекли) */
+function polRowHtml(p, car){
+  var st=policyStatus(p);
+  var pill = rPaid(p)?'<span class="badge ok">✅ Платена</span>':(rRenew(p)?'<span class="badge blue">🔄 Подновена</span>':'');
+  var watch = p.watchOnly?'<span class="badge" style="background:rgba(154,163,181,.18);color:var(--muted);">👁 следя · не е наша</span>':'';
+  var title = p.watchOnly ? '👁 Кола на клиента' : (isGo(p)?'ГО':'КАСКО');
+  var d = daysUntil(p.endDate);
+  var faded = (d!==null && d < -60) ? 'opacity:.55;' : '';
+  return '<div class="list-item" style="cursor:pointer;'+faded+'" onclick="openPolicy(\''+p.id+'\')">'
+    +'<div class="name">'+title+(p.polica?' · '+esc(p.polica):'')
+    +' <span class="badge '+st.cls+'">'+st.label+'</span>'+pill+watch+'</div>'
+    +'<div class="meta">Изтича: '+fmtDate(p.endDate)+(p.suma_client?' · 💰 '+money(p.suma_client):'')+'</div>'
+    +'<div class="meta" style="color:var(--accent);font-size:12px;">Натисни за детайли ›</div>'
+    +(p.watchOnly?'':actionBtns('r', rKey(p), rRenew(p), rPaid(p), car?car.id:''))+'</div>';
+}
+
+/* Покажи изтеклите полици на една кола */
+function showOldPolicies(carId){
+  var car = getCar(carId);
+  var all = DATA.policies.filter(function(p){ return String(p.carId)===String(carId); });
+  var cur = policiesForCar(carId);
+  var old = all.filter(function(p){ return cur.indexOf(p)===-1; });
+  old.sort(function(a,b){ return String(b.endDate).localeCompare(String(a.endDate)); });
+  showModal('<button class="close-x" onclick="closeModal()">&times;</button>'
+    +'<h2>🗄️ Изтекли полици</h2>'
+    +'<div class="meta" style="color:var(--muted);">'+esc(car?(car.plate||''):'')+' · '+old.length+' бр.</div>'
+    +'<div style="margin-top:12px;">'
+    +old.map(function(p){ return polRowHtml(p, car); }).join('')
+    +'</div>'
+    +'<button class="btn btn-secondary" style="margin-top:10px" onclick="closeModal();openCar(\''+carId+'\')">← Назад</button>');
 }
 
 function copyOffer(){
